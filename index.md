@@ -8,7 +8,7 @@ colorlinks: true
 <!-- ![LSE](images/lse-logo.jpg) -->
 # MY457 Causal Inference for Observational and Experimental Studies
   
-### Michaelmas Term 2023
+### Winter Term 2024
   
 [Main course repo](https://github.com/LSE-MY457/lse-my457.github.io)
 
@@ -20,6 +20,10 @@ Office hour slots to be booked via LSE's StudentHub
 
 * [Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
 * [Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.  
+
+### Textbooks
+
+* XXXX
 
 ### Assignments
 
