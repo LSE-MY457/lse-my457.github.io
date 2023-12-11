@@ -53,7 +53,7 @@ Office hour slots to be booked via LSE's StudentHub
 
 ### Quick links to seminars
 
-| Week |  Topic |  Lecturer  |
+| Week |  Topic |  Seminar Leaders  |
 |:--:|:-------:|:------|
 | 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
 | 4  | [Selection on Observables](#seminar-selection-on-observables) | Michael Ganslmeier &  Daniel de Kadt |  
