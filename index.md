@@ -67,7 +67,9 @@ Office hour slots to be booked via LSE's StudentHub
 
 #### 1. Potential Outcomes
 
-X
+This week begins with an introduction to the class, both substantively and 
+
+We then introduce the potential outcomes framework, which will provide the technical foundations that are used throughout the rest of the class. We will also briefly introduce a graphical approach to causal inference. 
 
 ##### Lecture
 
