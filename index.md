@@ -25,7 +25,7 @@ Office hour slots to be booked via LSE's StudentHub
 
 * XXXX
 
-### Assignments
+### Problem sets
 
 |  |  Type |  Due date  |
 |:--:|:-------:|:------|
@@ -35,9 +35,7 @@ Office hour slots to be booked via LSE's StudentHub
 | 4 | [Formative problem set 4](#problem-set-4) | XXX |
 | 5 | [Formative problem set 5](#problem-set-5) | XXX |
 
-
-
-### Quick links to topics
+### Quick links to lectures
 
 | Week |  Topic |  Lecturer  |
 |:--:|:-------:|:------|
@@ -51,7 +49,17 @@ Office hour slots to be booked via LSE's StudentHub
 | 8  | [Synthetic Control Methods](#8-synthetic-control-methods) |  Daniel de Kadt |   
 | 9  | [Instrumental Variables](#9-instrumental-variables) |  Daniel de Kadt |  
 | 10 | [Regression Discontinuity](#10-regression-discontinuity) |  Daniel de Kadt |  
-| 11 | [Machine Learning and Causal Inference](#11-cloud-computing) |  Daniel de Kadt |  
+| 11 | [Machine Learning and Causal Inference](#11-machine-learning-and-causal-inference) |  Daniel de Kadt |  
+
+### Quick links to seminars
+
+| Week |  Topic |  Lecturer  |
+|:--:|:-------:|:------|
+| 2  | [XXX](#2-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
+| 4 | [XXX](#4-selection-on-observables-2) | Michael Ganslmeier &  Daniel de Kadt |  
+| 7  | [XXX](#7-difference-in-differences-2)  | Michael Ganslmeier &  Daniel de Kadt |  
+| 9  | [XXX](#9-instrumental-variables) | Michael Ganslmeier &  Daniel de Kadt |  
+| 11  | [XXX](#11-machine-learning-and-causal-inference) | Michael Ganslmeier &  Daniel de Kadt |
 
 ### Detailed course schedule
 
@@ -65,8 +73,23 @@ X
 
 - [Slides](XXX)
 
-##### Seminar
+##### Readings
+* XXX
 
+##### Additional readings
+* XXX
+
+#### 2. Randomization
+
+X
+
+##### Lecture
+
+- [Slides](XXX)
+
+##### Seminar: Potential Outcomes and Randomization
+
+- [Slides](XXX)
 - [Code](XXX)
 
 ##### Readings
