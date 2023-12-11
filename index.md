@@ -67,9 +67,9 @@ Office hour slots to be booked via LSE's StudentHub
 
 #### 1. Potential Outcomes
 
-This week begins with an introduction to the class, both substantively and 
+This week begins with an introduction to the class, both substantively and administratively. 
 
-We then introduce the potential outcomes framework, which will provide the technical foundations that are used throughout the rest of the class. We will also briefly introduce a graphical approach to causal inference. 
+We then introduce the potential outcomes framework, which will provide the technical foundations that are used throughout the rest of the class. We will also briefly introduce the graphical approach to causal inference. 
 
 ##### Lecture
 
@@ -83,7 +83,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 
 #### 2. Randomization
 
-X
+This week we will introduce the concept of randomization and its value for causal inference. We will discuss, at a high level, design, analysis, and inference in randomized experiments. 
 
 ##### Lecture
 
