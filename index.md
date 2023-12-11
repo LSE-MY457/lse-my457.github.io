@@ -33,6 +33,8 @@ Office hour slots to be booked via LSE's StudentHub
 | 2 | [Formative problem set 2](#problem-set-2) | XXX |
 | 3 | [Formative problem set 3](#problem-set-3) | XXX |
 | 4 | [Formative problem set 4](#problem-set-4) | XXX |
+| 5 | [Formative problem set 5](#problem-set-5) | XXX |
+
 
 
 ### Quick links to topics
