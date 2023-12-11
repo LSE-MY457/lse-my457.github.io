@@ -56,10 +56,10 @@ Office hour slots to be booked via LSE's StudentHub
 | Week |  Topic |  Lecturer  |
 |:--:|:-------:|:------|
 | 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
-| 4  | [Selection on Observables](#4-selection-on-observables-2) | Michael Ganslmeier &  Daniel de Kadt |  
-| 7  | [Difference-in-Differences](#7-difference-in-differences-2)  | Michael Ganslmeier &  Daniel de Kadt |  
-| 9  | [Instrumental Variables](#9-instrumental-variables) | Michael Ganslmeier &  Daniel de Kadt |  
-| 11  | [Regression Discontinuity](#11-machine-learning-and-causal-inference) | Michael Ganslmeier &  Daniel de Kadt |
+| 4  | [Selection on Observables](#seminar-selection-on-observables) | Michael Ganslmeier &  Daniel de Kadt |  
+| 7  | [Difference-in-Differences](#seminar-difference-in-differences)  | Michael Ganslmeier &  Daniel de Kadt |  
+| 9  | [Instrumental Variables](#seminar-instrumental-variables) | Michael Ganslmeier &  Daniel de Kadt |  
+| 11  | [Regression Discontinuity](#seminar-regression-discontinuity) | Michael Ganslmeier &  Daniel de Kadt |
 
 ### Detailed course schedule
 
