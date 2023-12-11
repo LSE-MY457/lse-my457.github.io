@@ -101,3 +101,5 @@ X
 * XXX
 
 ##### Problem Set 1
+- [Problem Set](psets/pset1/problem_set1.pdf)
+- [Data](psets/pset1/data/...)
