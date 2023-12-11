@@ -55,7 +55,7 @@ Office hour slots to be booked via LSE's StudentHub
 
 | Week |  Topic |  Lecturer  |
 |:--:|:-------:|:------|
-| 2  | [Potential Outcomes and Randomization](#seminar:-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
+| 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
 | 4  | [Selection on Observables](#4-selection-on-observables-2) | Michael Ganslmeier &  Daniel de Kadt |  
 | 7  | [Difference-in-Differences](#7-difference-in-differences-2)  | Michael Ganslmeier &  Daniel de Kadt |  
 | 9  | [Instrumental Variables](#9-instrumental-variables) | Michael Ganslmeier &  Daniel de Kadt |  
