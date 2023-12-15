@@ -18,8 +18,8 @@ colorlinks: true
 
 Office hour slots to be booked via LSE's StudentHub
 
-* [Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
-* [Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.  
+* [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
+* [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.  
 
 ### Textbooks
 
