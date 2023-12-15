@@ -23,7 +23,11 @@ Office hour slots to be booked via LSE's StudentHub
 
 ### Textbooks
 
-* XXXX
+Throughout the term we will dip into three main resources: 
+
+* Angrist and Pischke, _Mostly Harmless Econometrics: An Empiricist's Companion_, 2009, Princeton University Press. 
+* Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
+* Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
 
 ### Problem sets
 
