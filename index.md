@@ -22,18 +22,18 @@ colorlinks: true
 
 Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1232310). We will not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please do email or attend office hours. 
 
-### Textbooks
+### Readings and textbooks
 
-Throughout the term we will dip into three main resources, which we will refer to by their acronyms: 
+There is a reasonable amount of reading for this class, especially in the early weeks. You are strongly encouraged to do the reading **before class**, paying close attention to details (i.e., do not skim over equations). In addition to some key articles, throughout the term we will dip into three main textbooks, which we will refer to by their acronyms: 
 
 * **MHE**: Angrist and Pischke, _Mostly Harmless Econometrics: An Empiricist's Companion_, 2009, Princeton University Press. 
 * **CIS**: Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
 * **TE** Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
 
-If you are particularly interested in this material, there will be additioanl readings set from the f: 
+If you are particularly interested in the course material, there will be additional readings set from the following textbooks (as well as a few articles): 
 
-* **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press.
-* **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley.
+* **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press. 
+* **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley. (a modern and more gentle introduction to CMRI -- generally if there are suggested readings from both books, you should choose either, not both.)
 * **CIWI**: Hernan and Robins, _Causal Inference: What If_, 2020, Routledge. 
 
 ### Formative problem sets
@@ -96,7 +96,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 ##### Additional readings
 * CIS: Chapters 1 & 2
 * TE: Chapters 1 & 2
-* 
+* CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2
 
 #### 2. Randomization
 
