@@ -32,7 +32,7 @@ Throughout the term we will dip into three main resources:
 
 ### Formative problem sets
 
-These will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](problem-sets/pset-template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+These will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset-template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
