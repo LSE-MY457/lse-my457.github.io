@@ -29,15 +29,15 @@ Throughout the term we will dip into three main resources:
 * Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
 * Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
 
-### Problem sets
+### Formative problem sets
 
-|  |  Type |  Due date  |
-|:--:|:-------:|:------|
-| 1 | [Formative problem set 1](#problem-set-1) | XXX |
-| 2 | [Formative problem set 2](#problem-set-2) | XXX |
-| 3 | [Formative problem set 3](#problem-set-3) | XXX |
-| 4 | [Formative problem set 4](#problem-set-4) | XXX |
-| 5 | [Formative problem set 5](#problem-set-5) | XXX |
+|  |  Type | Release date | Due date  |
+|:--:|:-------:|:-----:|:-----|
+| 1 | [Formative problem set 1](#problem-set-1) | 1 February 2023 - 5pm |
+| 2 | [Formative problem set 2](#problem-set-2) | 15 February 2023 - 5pm  |
+| 3 | [Formative problem set 3](#problem-set-3) | 7 March 2023 - 5pm  |
+| 4 | [Formative problem set 4](#problem-set-4) | 21 March 2023 - 5pm  |
+| 5 | [Formative problem set 5](#problem-set-5) | 4 April 2023 - 5pm  |
 
 ### Quick links to lectures
 
