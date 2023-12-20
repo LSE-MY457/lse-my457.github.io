@@ -88,7 +88,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 
 ##### Lecture
 
-- [Slides](XXX)
+- [Lecture Slides](XXX)
 
 ##### Readings
 * MHE: Chapter 1
@@ -106,12 +106,12 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Lecture
 
-- [Slides](XXX)
+- [Lecture Slides](XXX)
 
 ##### Seminar: Potential Outcomes and Randomization
 
-- [Slides](XXX)
-- [Code](XXX)
+- [Seminar Slides](XXX)
+- [Seminar Code](XXX)
 
 ##### Readings
 * MHE: Chapter 2
@@ -119,7 +119,7 @@ This week we will introduce the concept of randomization and its value for causa
 * TE: Chapters 7 & 8
 
 ##### Additional readings
-* CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 (
+* CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 
 
 ##### Problem Set 1
 - [Problem Set](psets/pset1/problem_set1.pdf)
