@@ -89,12 +89,12 @@ We then introduce the potential outcomes framework, which will provide the techn
 - [Slides](XXX)
 
 ##### Readings
-* MHE: Chapters 1 & 2
-* TE: Chapters 6 & 7
+* MHE: Chapter 1
+* CIS: Chapters 1 & 2
+* TE: Chapter 6 
 * [Holland, P.W., 1986. Statistics and causal inference. _Journal of the American statistical Association_, 81(396), pp.945-960.](https://www.jstor.org/stable/2289064)
 
 ##### Additional readings
-* CIS: Chapters 1 & 2
 * TE: Chapters 1 & 2
 * CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2
 
