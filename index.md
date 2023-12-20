@@ -24,11 +24,17 @@ Office hour may be booked via LSE's StudentHub. If you have questions or concern
 
 ### Textbooks
 
-Throughout the term we will dip into three main resources: 
+Throughout the term we will dip into three main resources, which we will refer to by their acronyms: 
 
-* Angrist and Pischke, _Mostly Harmless Econometrics: An Empiricist's Companion_, 2009, Princeton University Press. 
-* Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
-* Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
+* **MHE**: Angrist and Pischke, _Mostly Harmless Econometrics: An Empiricist's Companion_, 2009, Princeton University Press. 
+* **CIS**: Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
+* **TE** Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
+
+If you are particularly interested in this material, there will be additioanl readings set from the f: 
+
+* **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press.
+* **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley.
+* **CIWI**: Hernan and Robins, _Causal Inference: What If_, 2020, Routledge. 
 
 ### Formative problem sets
 
@@ -83,10 +89,14 @@ We then introduce the potential outcomes framework, which will provide the techn
 - [Slides](XXX)
 
 ##### Readings
-* XXX
+* MHE: Chapters 1 & 2
+* TE: Chapters 6 & 7
+* [Holland, P.W., 1986. Statistics and causal inference. _Journal of the American statistical Association_, 81(396), pp.945-960.](https://www.jstor.org/stable/2289064)
 
 ##### Additional readings
-* XXX
+* CIS: Chapters 1 & 2
+* TE: Chapters 1 & 2
+* 
 
 #### 2. Randomization
 
