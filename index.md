@@ -32,7 +32,7 @@ Throughout the term we will dip into three main resources:
 
 ### Formative problem sets
 
-These will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Comments will be returned via Moodle within two weeks of submission. 
+These will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](problem-sets/pset-template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
@@ -44,33 +44,33 @@ These will be released every two weeks at 5pm, after seminar. You must submit on
 
 ### Quick links to lectures
 
-| Week |  Topic |  Lecturer  |
-|:--:|:-------:|:------|
-| 1  | [Potential Outcomes](#1-potential-outcomes) |  Daniel de Kadt | 
-| 2  | [Randomization](#2-randomization) |  Daniel de Kadt |  
-| 3  | [Selection on Observables 1](#3-selection-on-observables-1) |  Daniel de Kadt |  
-| 4  | [Selection on Observables 2](#4-selection-on-observables-2) |  Daniel de Kadt |  
-| 5  | [Difference-in-Differences 1](#5-difference-in-differences-1) |  Daniel de Kadt |
+| Week |  Topic |  
+|:--:|:-------|
+| 1  | [Potential Outcomes](#1-potential-outcomes) |   
+| 2  | [Randomization](#2-randomization) | 
+| 3  | [Selection on Observables 1](#3-selection-on-observables-1) | 
+| 4  | [Selection on Observables 2](#4-selection-on-observables-2) | 
+| 5  | [Difference-in-Differences 1](#5-difference-in-differences-1) |
 | 6  | _Reading week_ |  
-| 7  | [Difference-in-Differences 2](#7-difference-in-differences-2) |  Daniel de Kadt |   
-| 8  | [Synthetic Control Methods](#8-synthetic-control-methods) |  Daniel de Kadt |   
-| 9  | [Instrumental Variables](#9-instrumental-variables) |  Daniel de Kadt |  
-| 10 | [Regression Discontinuity](#10-regression-discontinuity) |  Daniel de Kadt |  
-| 11 | [Machine Learning and Causal Inference](#11-machine-learning-and-causal-inference) |  Daniel de Kadt |  
+| 7  | [Difference-in-Differences 2](#7-difference-in-differences-2) | 
+| 8  | [Synthetic Control Methods](#8-synthetic-control-methods) |  
+| 9  | [Instrumental Variables](#9-instrumental-variables) |  
+| 10 | [Regression Discontinuity](#10-regression-discontinuity) | 
+| 11 | [Machine Learning and Causal Inference](#11-machine-learning-and-causal-inference) |   
 
 ### Quick links to seminars
 
-| Week |  Topic |  Seminar Leaders  |
-|:--:|:-------:|:------|
-| 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  Michael Ganslmeier & Daniel de Kadt | 
-| 4  | [Selection on Observables](#seminar-selection-on-observables) | Michael Ganslmeier &  Daniel de Kadt |  
-| 7  | [Difference-in-Differences](#seminar-difference-in-differences)  | Michael Ganslmeier &  Daniel de Kadt |  
-| 9  | [Instrumental Variables](#seminar-instrumental-variables) | Michael Ganslmeier &  Daniel de Kadt |  
-| 11  | [Regression Discontinuity](#seminar-regression-discontinuity) | Michael Ganslmeier &  Daniel de Kadt |
+| Week |  Topic | 
+|:--:|:-------|
+| 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  
+| 4  | [Selection on Observables](#seminar-selection-on-observables) |
+| 7  | [Difference-in-Differences](#seminar-difference-in-differences) |
+| 9  | [Instrumental Variables](#seminar-instrumental-variables) |  
+| 11  | [Regression Discontinuity](#seminar-regression-discontinuity) | 
 
 ### Detailed course schedule
 
-*Please note, links to slides and code scripts will be updated/added in advance of each week's teaching.*
+*Please note, links to slides and code will be updated/added in advance of each week's teaching.*
 
 #### 1. Potential Outcomes
 
