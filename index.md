@@ -32,9 +32,11 @@ There is a reasonable amount of reading for this class, especially in the early 
 
 If you are particularly interested in the course material, there will be additional readings set from the following textbooks (as well as a few articles): 
 
-* **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press. 
-* **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley. (a modern and more gentle introduction to CMRI -- generally if there are suggested readings from both books, you should choose either, not both.)
+* **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press.
+* **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley.
 * **CIWI**: Hernan and Robins, _Causal Inference: What If_, 2020, Routledge. 
+
+Note: if you are particularly interested in graphical models and their application to causal inference, it is strongly recommended that you do all the readings from either CMRI or CISAP. CMRI is extremely technical and dense, while CISAP is a gentler (though not that gentle) introduction to some of the basics introduced in CMRI. If there are suggested readings from both books, you should choose either, not both.
 
 ### Formative problem sets
 
@@ -95,7 +97,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 
 ##### Additional readings
 * [Holland, P.W., 1986. Statistics and causal inference. _Journal of the American statistical Association_, 81(396), pp.945-960.](https://www.jstor.org/stable/2289064) (highly recommended)
-* CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2 (highly recommended if you are intereted in DAGs and graphical models)
+* CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2 
 * TE: Chapters 1 & 2
 
 #### 2. Randomization
@@ -113,12 +115,11 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Readings
 * MHE: Chapter 2
-* CIS: Chapters 3
-* TE: Chapter 6 
-
+* CIS: Chapters 3 & 4
+* TE: Chapters 7 & 8
 
 ##### Additional readings
-* XXX
+* CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 (
 
 ##### Problem Set 1
 - [Problem Set](psets/pset1/problem_set1.pdf)
