@@ -18,8 +18,9 @@ colorlinks: true
 
 Office hour slots to be booked via LSE's StudentHub
 
-* [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
-* [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.  
+* Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
+* Seminar leader: [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.
+* GTA (no office hours): [Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk), Department of Social Policy. 
 
 ### Textbooks
 
@@ -31,13 +32,15 @@ Throughout the term we will dip into three main resources:
 
 ### Formative problem sets
 
+These will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Comments will be returned via Moodle within two weeks of submission. 
+
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
-| 1 | [Formative problem set 1](#problem-set-1) | 1 February 2023 - 5pm |
-| 2 | [Formative problem set 2](#problem-set-2) | 15 February 2023 - 5pm  |
-| 3 | [Formative problem set 3](#problem-set-3) | 7 March 2023 - 5pm  |
-| 4 | [Formative problem set 4](#problem-set-4) | 21 March 2023 - 5pm  |
-| 5 | [Formative problem set 5](#problem-set-5) | 4 April 2023 - 5pm  |
+| 1 | [Formative problem set 1](#problem-set-1) | 25 January 2023 - 5pm | 1 February 2023 - 5pm |
+| 2 | [Formative problem set 2](#problem-set-2) | 8 February 2023 - 5pm | 15 February 2023 - 5pm  |
+| 3 | [Formative problem set 3](#problem-set-3) | 29 February 2023 - 5pm | 7 March 2023 - 5pm  |
+| 4 | [Formative problem set 4](#problem-set-4) | 14 March 2023 - 5pm  | 21 March 2023 - 5pm  |
+| 5 | [Formative problem set 5](#problem-set-5) | 28 March 2023 - 5pm | 4 April 2023 - 5pm  |
 
 ### Quick links to lectures
 
