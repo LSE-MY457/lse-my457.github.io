@@ -36,7 +36,7 @@ If you are particularly interested in the course material, there will be additio
 * **CISAP**: Pearl, Glymour, and Jewell, _Causal Inference in Statistics: A Primer_, 2016, Wiley.
 * **CIWI**: Hernan and Robins, _Causal Inference: What If_, 2020, Routledge. 
 
-Note: if you are particularly interested in graphical models and their application to causal inference, it is strongly recommended that you do all the readings from either CMRI or CISAP. CMRI is extremely technical and dense, while CISAP is a gentler (though not that gentle) introduction to some of the basics introduced in CMRI. If there are suggested readings from both books, you should choose either, not both.
+_Note_: if you are particularly interested in graphical models and their application to causal inference, it is strongly recommended that you do all the readings from either CMRI or CISAP. CMRI is extremely technical and dense, while CISAP is a gentler (though not that gentle) introduction to some of the basics introduced in CMRI. If there are suggested readings from both books, you should choose either, not both.
 
 ### Formative problem sets
 
@@ -78,7 +78,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 
 ### Detailed course schedule
 
-*Please note, links to slides and code will be updated/added in advance of each week's teaching.*
+_Note:_ Links to slides and code will be updated/added in advance of each week's teaching.
 
 #### 1. Potential Outcomes
 
