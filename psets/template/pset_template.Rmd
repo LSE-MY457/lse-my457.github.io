@@ -1,0 +1,92 @@
+---
+title: "MY457: Problem Set Template"
+date:  "`r format(Sys.time(), '%a/%d/%b')`"
+author: "[Your Name Here]"
+always_allow_html: true
+output: 
+  bookdown::pdf_document2:
+    toc: false
+---
+
+```{r setup, include = FALSE}
+# this chunk contains code that sets global options for the entire .Rmd. 
+# we use include=FALSE to suppress it from the top of the document, but it will still appear in the appendix. 
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, linewidth=60)
+
+# you can include your libraries here:
+library(tidyverse)
+
+# and any other options in R:
+options(scipen=999)
+
+```
+
+# R Markdown
+
+You must submit your problem set solutions as a .pdf. We strongly recommend that you use `R Markdown`, which allows you to integrate R code and your own writing/commentary into a single reproducible document. This specific template is set up as a `Bookdown` document written to .pdf. You should click the **Knit** button in `RStudio` to produce the .pdf document. The majority of your code should appear **only** in the code appendix at the end of the document. The main part of your document should be written text, plus tables, plots, and occasionally code chunks where relevant (e.g. if you write a particular function you want to discuss in detail).
+
+# Code
+`R Markdown` documents allow you to write and evaluate (run) code in `chunks`, which can support a variety of languages. For this class you will only need to use `R`. It is always advisable to given your chunks meaningful names. You can set specific options in the code chunk, or you can set global options that can be overridden by specific chunks. Your code should be well-formatted and clearly written, and we advise heavy commenting of code using the normal `R` style. In this document we leave an open line at the end of code chunks to make the code appendix easier to follow. 
+
+In general, if you include a code chunk that does something you do not need to set additional options. The global options used in this template mean that code won't be print in your main document, but will be printed in your code appendix. This is the preferred approach to most code you write for your problem sets. 
+
+```{r useful_chunk_name}
+# nothing in this chunk will be printed in the main document 
+# except the output of the code.
+print("hello world")
+
+```
+
+If you do want to include and run some code for some reason, you should use `echo=TRUE` in the chunk options. Please use this sparingly as it can become overwhelming very quickly if you include lots of code in your write-up. This is why we have the code appendix. 
+
+```{r show-and-run-me, echo=TRUE}
+# everything in this chunk will be printed in the main document, 
+# plus the output of the code.
+print("hello world")
+
+```
+
+By contrast, if you just want to include code but not run it  (e.g. to illustrate something without producing and including any results), you should use `echo=TRUE` and `eval=FALSE`:
+
+```{r show-dont-run-me, echo=TRUE, eval=FALSE}
+# everything in this chunk will be printed in the main document, 
+# but the code won't run and so the output won't be included.
+print("hello world")
+
+```
+
+# In-line references
+It can often be useful to use in-line references to the value of particular objects that are defined in your `R` environment. For example, you might generate an estimate in `R` and want to discuss or interpret that estimate in your write-up. Referencing the value of an object from your environment will look like this in your markdown text: `` `r knitr::inline_expr("object_name")` ``. Below we provide a practical example.
+
+```{r defining-alpha, echo=TRUE}
+# here we define alpha, so that we have an object to reference in-line
+alpha <- 12345
+
+```
+
+The value of alpha is equal to `r alpha`. You can also do operations in-line. The value of alpha divided by 10 is `r alpha/10`.
+
+# Plots
+To produce and include plots, create a chunk of code which generates the plot. Because the global options are set as `echo=FALSE` the code itself will not be shown, only the plot. Please give your figures labels, and discuss them in your text. You can do this by referencing the figure using `\@ref(fig:chunk-name)` in-line. For example, Figure \@ref(fig:cars-plot) shows the cars data. 
+
+```{r cars-plot, fig.cap="A simple scatterplot of the cars data"}
+# making a simple scatterplot using the cars data
+plot(cars)
+
+```
+
+# Tables
+To produce and include tables, create a chunk of code which generates the table. You can generate the table using numerous `R` packages including but not limited to `xtable`, `mtable`, `stargazer`, `kable` and `kable extra`. Below we shown an example using `kable` from the `knitr` package. Because the global options are set as `echo=FALSE` the code itself will not be shown, only the plot. As with figures, pelase give your tables labels, and discuss them in your text. You can do this by referencing the table using `\@ref(tab:chunk-name)` in-line. For example, Table \@ref(tab:mtcars-table) shows the cars data. 
+
+```{r mtcars-table}
+# making a simple table of the mtcars data
+knitr::kable(mtcars[1:5,], caption = "The first five rows of mtcars")
+
+```
+
+\clearpage
+# Code appendix
+```{r ref.label = knitr::all_labels(), echo=TRUE, eval=FALSE}
+# this chunk generates the complete code appendix. 
+# eval=FALSE tells R not to re-run (``evaluate'') the code here. 
+```
