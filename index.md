@@ -90,13 +90,13 @@ We then introduce the potential outcomes framework, which will provide the techn
 
 ##### Readings
 * MHE: Chapter 1
-* CIS: Chapters 1 & 2
+* CIS: Chapters 1, 2, and 3.1
 * TE: Chapter 6 
-* [Holland, P.W., 1986. Statistics and causal inference. _Journal of the American statistical Association_, 81(396), pp.945-960.](https://www.jstor.org/stable/2289064)
 
 ##### Additional readings
+* [Holland, P.W., 1986. Statistics and causal inference. _Journal of the American statistical Association_, 81(396), pp.945-960.](https://www.jstor.org/stable/2289064) (highly recommended)
+* CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2 (highly recommended if you are intereted in DAGs and graphical models)
 * TE: Chapters 1 & 2
-* CISAP: Chapters 1 & 2 or CMRI: Chapters 1 & 2
 
 #### 2. Randomization
 
@@ -112,7 +112,10 @@ This week we will introduce the concept of randomization and its value for causa
 - [Code](XXX)
 
 ##### Readings
-* XXX
+* MHE: Chapter 2
+* CIS: Chapters 3
+* TE: Chapter 6 
+
 
 ##### Additional readings
 * XXX
