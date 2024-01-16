@@ -58,13 +58,13 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 | 2  | [Randomization](#2-randomization) | 
 | 3  | [Selection on Observables 1](#3-selection-on-observables-1) | 
 | 4  | [Selection on Observables 2](#4-selection-on-observables-2) | 
-| 5  | [Difference-in-Differences 1](#5-difference-in-differences-1) |
+| 5  | [Selection on Observables 3](#5-selection-on-observables-3) | 
 | 6  | _Reading week_ |  
-| 7  | [Difference-in-Differences 2](#7-difference-in-differences-2) | 
-| 8  | [Synthetic Control Methods](#8-synthetic-control-methods) |  
-| 9  | [Instrumental Variables](#9-instrumental-variables) |  
-| 10 | [Regression Discontinuity](#10-regression-discontinuity) | 
-| 11 | [Machine Learning and Causal Inference](#11-machine-learning-and-causal-inference) |   
+| 7  | [Difference-in-Differences 1](#7-difference-in-differences-1) |
+| 8  | [Difference-in-Differences 2](#8-difference-in-differences-2) | 
+| 9  | [Synthetic Control Methods](#9-synthetic-control-methods) |  
+| 10 | [Instrumental Variables](#10-instrumental-variables) |  
+| 11 | [Regression Discontinuity](#11-regression-discontinuity) | 
 
 ### Quick links to seminars
 
@@ -74,7 +74,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 | 4  | [Selection on Observables](#seminar-selection-on-observables) |
 | 7  | [Difference-in-Differences](#seminar-difference-in-differences) |
 | 9  | [Instrumental Variables](#seminar-instrumental-variables) |  
-| 11  | [Regression Discontinuity](#seminar-regression-discontinuity) | 
+| 11 | [Regression Discontinuity](#seminar-regression-discontinuity) | 
 
 ### Detailed course schedule
 
