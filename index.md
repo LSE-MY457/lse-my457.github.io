@@ -54,7 +54,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 
 | Week |  Topic |  
 |:--:|:-------|
-| 1  | [Potential Outcomes](#1-potential-outcomes) |   
+| 1  | [Causal Framworks](#1-causal-frameworks) |   
 | 2  | [Randomization](#2-randomization) | 
 | 3  | [Selection on Observables 1](#3-selection-on-observables-1) | 
 | 4  | [Selection on Observables 2](#4-selection-on-observables-2) | 
@@ -70,7 +70,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 
 | Week |  Topic | 
 |:--:|:-------|
-| 2  | [Potential Outcomes and Randomization](#seminar-potential-outcomes-and-randomization) |  
+| 2  | [Causality and Randomization](#seminar-causality-and-randomization) |  
 | 4  | [Selection on Observables](#seminar-selection-on-observables) |
 | 7  | [Difference-in-Differences](#seminar-difference-in-differences) |
 | 9  | [Instrumental Variables](#seminar-instrumental-variables) |  
@@ -80,7 +80,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 
 _Note:_ Links to slides and code will be updated/added in advance of each week's teaching.
 
-#### 1. Potential Outcomes
+#### 1. Causal Frameworks
 
 This week begins with an introduction to the class, both substantively and administratively. 
 
@@ -108,7 +108,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 - [Lecture Slides](XXX)
 
-##### Seminar: Potential Outcomes and Randomization
+##### Seminar: Causality and Randomization
 
 - [Seminar Slides](XXX)
 - [Seminar Code](XXX)
