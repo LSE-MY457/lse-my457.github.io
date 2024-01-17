@@ -89,7 +89,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 ##### Lecture
 
 - [Lecture Slides - Introduction](slides/L1_intro.pdf)
-- [Lecture Slides - Causal ](slides/L1_causalframeworks.pdf)
+- [Lecture Slides - Causal Frameworks](slides/L1_causalframeworks.pdf)
 
 ##### Readings
 * MHE: Chapter 1
