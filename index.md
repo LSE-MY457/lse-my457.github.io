@@ -138,7 +138,7 @@ We will then begin an extended discussion of estimation of causal estimands in t
 
 ##### Readings
 * MHE: Chapter 3
-* CIS: Chapters 12, 13
+* CIS: Chapters 12, 13, 18
 * TE: Chapter 14
 
 ##### Additional readings
