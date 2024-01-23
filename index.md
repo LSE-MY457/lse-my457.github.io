@@ -10,10 +10,6 @@ colorlinks: true
   
 ### Winter Term 2024
   
-[Main course repo](https://github.com/LSE-MY457/lse-my457.github.io)
-
-[Moodle page](https://moodle.lse.ac.uk/course/view.php?id=1111)
-
 ### Instructors
 
 * Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
