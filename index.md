@@ -101,7 +101,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Lecture
 
-- [Lecture Slides](XXX)
+- [Lecture Slides](slides/L2_randomization.pdf)
 
 ##### Seminar: Causality and Randomization
 
