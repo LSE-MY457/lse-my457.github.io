@@ -8,8 +8,6 @@ colorlinks: true
 <!-- ![LSE](images/lse-logo.jpg) -->
 # MY457 Causal Inference for Observational and Experimental Studies
   
-### Winter Term 2024
-  
 ### Instructors
 
 * Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
