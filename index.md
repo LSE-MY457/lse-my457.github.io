@@ -10,9 +10,9 @@ colorlinks: true
   
 ### Instructors
 
-* Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Department of Methodology.
-* Seminar leader: [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Department of Methodology.
-* GTA (no office hours): [Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk), Department of Social Policy. 
+* Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Methodology.
+* Seminar leader: [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Methodology.
+* GTA (no office hours): [Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk), Social Policy. 
 
 Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1232310). We will not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please do email or attend office hours. 
 
