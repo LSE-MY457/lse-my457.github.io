@@ -6,7 +6,7 @@ colorlinks: true
 ---
   
 <!-- ![LSE](images/lse-logo.jpg) -->
-# MY457 Causal Inference for Observational and Experimental Studies
+<!-- # MY457 Causal Inference for Observational and Experimental Studies  -->
   
 ### Instructors
 
