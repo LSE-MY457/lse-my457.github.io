@@ -125,3 +125,22 @@ This week we will introduce the concept of randomization and its value for causa
 ##### Problem Set 1
 - [Problem Set](psets/pset1/problem_set1.pdf)
 - [Data](psets/pset1/data/...)
+
+#### 3. Selection on Observables 1
+
+This week we will depart from the safe shores of randomization, into the dangerous waters of observational research design. We will begin with a theoretical exploration of the selection on observables design -- its assumptions and identification results -- using both potential outcomes and graphical theory. 
+
+We will then begin an extended discussion of estimation of causal estimands in this setting, focusing first on subclassification and matching (including the propensity score).
+
+##### Lecture
+
+- [Lecture Slides - Causal Frameworks](slides/L3_soo_part1.pdf)
+
+##### Readings
+* MHE: Chapter 3
+* CIS: Chapters 12, 13
+* TE: Chapter 14
+
+##### Additional readings
+* [Cinelli, C., Forney, A., & Pearl, J. (2022). A Crash Course in Good and Bad Controls. Sociological Methods & Research](https://doi.org/10.1177/00491241221099552) (highly recommended)
+* CISAP: Chapter 4 or CMRI: Chapter 5
