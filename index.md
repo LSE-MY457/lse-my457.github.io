@@ -105,8 +105,8 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Seminar: Causality and Randomization
 
-- [Seminar Slides](XXX)
-- [Seminar Code](XXX)
+- [Seminar Slides](ComputerClasses/ComputerClass01/slides/MY457_intro_seminars.pdf)
+- [Seminar Code](ComputerClasses/ComputerClass01/coding/Class01-RandomizedExperiments.Rmd)
 
 ##### Readings
 * MHE: Chapter 2
