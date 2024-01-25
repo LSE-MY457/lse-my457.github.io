@@ -118,8 +118,8 @@ This week we will introduce the concept of randomization and its value for causa
 * CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 
 
 ##### Problem Set 1
-- [Problem Set](psets/pset1/problem_set1.pdf)
-- [Data](psets/pset1/data/...)
+- [Problem Set](psets/pset1/pset1.pdf)
+- [Data](psets/pset1/how_to_elect_more_women.dta)
 
 #### 3. Selection on Observables 1
 
@@ -129,7 +129,7 @@ We will then begin an extended discussion of estimation of causal estimands in t
 
 ##### Lecture
 
-- [Lecture Slides - Causal Frameworks](slides/L3_soo_part1.pdf)
+- [Lecture Slides - Selection on Observables 1](slides/L3_soo_part1.pdf)
 
 ##### Readings
 * MHE: Chapter 3
