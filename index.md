@@ -48,7 +48,7 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 
 | Week |  Topic |  
 |:--:|:-------|
-| 1  | [Causal Framworks](#1-causal-frameworks) |   
+| 1  | [Causal Frameworks](#1-causal-frameworks) |   
 | 2  | [Randomization](#2-randomization) | 
 | 3  | [Selection on Observables 1](#3-selection-on-observables-1) | 
 | 4  | [Selection on Observables 2](#4-selection-on-observables-2) | 
@@ -101,7 +101,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Lecture
 
-- [Lecture Slides](slides/L2_randomization.pdf)
+- [Lecture Slides - Randomization](slides/L2_randomization.pdf)
 
 ##### Seminar: Causality and Randomization
 
