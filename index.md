@@ -107,7 +107,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 - [Seminar Slides](seminars/seminar1/slides/MY457_intro_seminars.pdf)
 - [Seminar Code](seminars/seminar1/coding/seminar1_randomized_experiments.Rmd)
-- [Seminar Questions](seminars/seminar1/coding/MY457_seminar1_questions.pdf)
+- [Seminar Questions](seminars/seminar1/paper/MY457_seminar1_questions.pdf)
 
 ##### Readings
 * MHE: Chapter 2
