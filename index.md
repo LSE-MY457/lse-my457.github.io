@@ -125,7 +125,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 This week we will depart from the safe shores of randomization, into the dangerous waters of observational research design. We will begin with a theoretical exploration of the selection on observables design -- its assumptions and identification results -- using both potential outcomes and graphical theory. 
 
-We will then begin an extended discussion of estimation of causal estimands in this setting, focusing first on subclassification and matching (including the propensity score).
+We will then begin an extended discussion (which will continue next week and the week after) of estimation of causal estimands in this setting, focusing first on subclassification.
 
 ##### Lecture
 
