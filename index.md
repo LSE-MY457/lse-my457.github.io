@@ -105,6 +105,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 ##### Seminar: Causality and Randomization
 
+- [Seminar Paper](seminars/seminar1/) 
 - [Seminar Slides](seminars/seminar1/slides/MY457_intro_seminars.pdf)
 - [Seminar Code](seminars/seminar1/coding/seminar1_randomized_experiments.Rmd)
 - [Seminar Questions](seminars/seminar1/paper/MY457_seminar1_questions.pdf)
@@ -139,3 +140,30 @@ We will then begin an extended discussion (which will continue next week and the
 ##### Additional readings
 * [Cinelli, C., Forney, A., & Pearl, J. (2022). A Crash Course in Good and Bad Controls. Sociological Methods & Research](https://doi.org/10.1177/00491241221099552) (highly recommended)
 * CISAP: Chapter 4 or CMRI: Chapter 5
+
+£### 4. Selection on Observables 2
+
+This week we will consider the three core estimation strategies for selection-on-observables designs: matching (including propensity scores), weighting, and regression. 
+
+##### Lecture
+
+- [Lecture Slides - Selection on Observables 2](slides/L4_soo_part2.pdf)
+
+##### Seminar: Selection on Observables
+
+- [Seminar Paper](seminars/seminar2/) 
+- [Seminar Slides](seminars/seminar2/slides/)
+- [Seminar Code](seminars/seminar2/coding/)
+- [Seminar Questions](seminars/seminar2/)
+
+##### Readings
+* MHE: Chapter 3
+* CIS:
+* TE: 
+
+##### Additional readings
+* CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 
+
+##### Problem Set 2
+- [Problem Set](psets/pset2/pset2.pdf)
+- [Data](psets/pset2/)
