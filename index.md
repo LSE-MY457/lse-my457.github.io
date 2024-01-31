@@ -141,7 +141,7 @@ We will then begin an extended discussion (which will continue next week and the
 * [Cinelli, C., Forney, A., & Pearl, J. (2022). A Crash Course in Good and Bad Controls. Sociological Methods & Research](https://doi.org/10.1177/00491241221099552) (highly recommended)
 * CISAP: Chapter 4 or CMRI: Chapter 5
 
-£### 4. Selection on Observables 2
+#### 4. Selection on Observables 2
 
 This week we will consider the three core estimation strategies for selection-on-observables designs: matching (including propensity scores), weighting, and regression. 
 
