@@ -157,13 +157,16 @@ This week we will consider the three core estimation strategies for selection-on
 - [Seminar Questions](seminars/seminar2/)
 
 ##### Readings
-* MHE: Chapter 3
-* CIS:
-* TE: 
+* MHE: Sections 3.2 and 3.3
+* CIS: Chapter 13
+* TE: Chapter 14
 
 ##### Additional readings
-* CISAP: Chapter 3 OR CMRI: Chapters 3 & 4 
+* TE: Chapter 13 (gentler introduction to regression)
+* [Lin, W. (2013). Agnostic Notes on Regression Aadjustments to Experimental Data: Reexamining Freedman’s Critique
+. Annals of Applied Statistics](https://doi.org/10.1177/00491241221099552](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Agnostic-notes-on-regression-adjustments-to-experimental-data--Reexamining/10.1214/12-AOAS583.full)https://projecteuclid.org/journals/annals-of-applied-statistics/volume-7/issue-1/Agnostic-notes-on-regression-adjustments-to-experimental-data--Reexamining/10.1214/12-AOAS583.full) (very technical but worth reading if interested in regression adjustment) 
+* [Abadie, A. & Imbens, G. (2006). Large Sample Properties of Matching Estimators for Average Treatment Effects. Econometrica.](https://doi.org/10.1111/j.1468-0262.2006.00655.x) (if you want to understand matching bias -- very technical)
+* [King, G. & Nielsen, R. (2019). Why Propensity Scores Should Not Be Used for Matching. Political Analysis.](https://doi.org/10.1017/pan.2019.11) (a critique of propensity score matching)
 
 ##### Problem Set 2
 - [Problem Set](psets/pset2/pset2.pdf)
-- [Data](psets/pset2/)
