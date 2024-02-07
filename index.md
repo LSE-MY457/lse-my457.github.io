@@ -151,10 +151,10 @@ This week we will consider the three core estimation strategies for selection-on
 
 ##### Seminar: Selection on Observables
 
-- [Seminar Paper](seminars/seminar2/paper.pdf) 
 - [Group allocation](seminars/group_allocation_for_presentations.xlsx)
-- [Seminar Code](seminars/seminar2/coding/)
-- [Seminar Questions](seminars/seminar2/)
+- [Seminar Code](seminars/seminar2/coding/Class02-MatchingAndWeighting.Rmd)
+- [Seminar Paper](seminars/seminar2/paper/MY457_seminar2_paper.pdf) 
+- [Seminar Questions](seminars/seminar2/paper/MY457_seminar1_questions.pdf)
 
 ##### Readings
 * MHE: Sections 3.2 and 3.3
