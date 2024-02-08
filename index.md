@@ -170,3 +170,4 @@ This week we will consider the three core estimation strategies for selection-on
 
 ##### Problem Set 2
 - [Problem Set](psets/pset2/pset2.pdf)
+- [Data](psets/pset2/dollars_on_the_sidewalk.dta)
