@@ -174,7 +174,7 @@ This week we will consider the three core estimation strategies for selection-on
 
 #### 5. Selection on Observables 3
 
-This week we will consider machine learning approaches to adjustment, then move on to bounds analysis and sensitivity analysis. 
+This week we will consider machine learning approaches to adjustment, then move on to partial identification, and then finally sensitivity analysis. 
 
 ##### Lecture
 
