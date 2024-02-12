@@ -171,3 +171,19 @@ This week we will consider the three core estimation strategies for selection-on
 ##### Problem Set 2
 - [Problem Set](psets/pset2/pset2.pdf)
 - [Data](psets/pset2/dollars_on_the_sidewalk.dta)
+
+#### 5. Selection on Observables 3
+
+This week we will consider machine learning approaches to adjustment, then move on to bounds analysis and sensitivity analysis. 
+
+##### Lecture
+
+- [Lecture Slides - Selection on Observables 3](slides/L5_soo_part3.pdf)
+
+##### Readings
+* [Manski, C.F., 1990. Nonparametric bounds on treatment effects. The American Economic Review, 80(2), pp.319-323.](https://www.jstor.org/stable/2006592) (very technical but worth reading, even if only for the intuition.)
+* [Cinelli, C., & Hazlett, C. (2020). Making sense of sensitivity: Extending omitted variable bias. Journal of the Royal Statistical Society Series B: Statistical Methodology, 82(1), 39-67.](https://academic.oup.com/jrsssb/article/82/1/39/7056023)
+
+##### Additional readings
+* [Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., & Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21(1).](https://academic.oup.com/ectj/article/21/1/C1/5056401) (extremely technical, but can be read at a high level for the intuition)
+
