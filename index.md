@@ -174,7 +174,7 @@ This week we will consider the three core estimation strategies for selection-on
 
 #### 5. Selection on Observables 3
 
-This week we will consider machine learning approaches to adjustment, then move on to partial identification, and then finally sensitivity analysis. 
+This week we will consider partial identification and sensitivity analysis. 
 
 ##### Lecture
 
@@ -182,8 +182,9 @@ This week we will consider machine learning approaches to adjustment, then move 
 
 ##### Readings
 * [Manski, C.F., 1990. Nonparametric bounds on treatment effects. The American Economic Review, 80(2), pp.319-323.](https://www.jstor.org/stable/2006592) (very technical but worth reading, even if only for the intuition.)
+* [Imbens, G. W. (2003). Sensitivity to exogeneity assumptions in program evaluation. American Economic Review, 93(2), 126-132.](https://www.jstor.org/stable/3132212)
 * [Cinelli, C., & Hazlett, C. (2020). Making sense of sensitivity: Extending omitted variable bias. Journal of the Royal Statistical Society Series B: Statistical Methodology, 82(1), 39-67.](https://academic.oup.com/jrsssb/article/82/1/39/7056023)
 
 ##### Additional readings
-* [Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., & Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21(1).](https://academic.oup.com/ectj/article/21/1/C1/5056401) (extremely technical, but can be read at a high level for the intuition)
-
+* [Rosenbaum, P. R., & Rubin, D. B. (1983). Assessing sensitivity to an unobserved binary covariate in an observational study with binary outcome. Journal of the Royal Statistical Society: Series B (Methodological), 45(2), 212-218.](https://www.jstor.org/stable/2345524) (technical but foundational)
+* [Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An automated approach to causal inference in discrete settings. Journal of the American Statistical Association, (just-accepted), 1-25.](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2023.2216909) (very technical but very interesting)
