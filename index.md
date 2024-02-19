@@ -183,7 +183,7 @@ This week we will consider partial identification and sensitivity analysis.
 
 ##### Seminar: Difference-in-Differences
 
-- [Seminar Code](seminars/seminar3/coding/
+- [Seminar Code](seminars/seminar3/coding/)
 - [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
 - [Seminar Questions](seminars/seminar3/paper/)
 
