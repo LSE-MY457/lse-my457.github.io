@@ -180,6 +180,14 @@ This week we will consider partial identification and sensitivity analysis.
 
 - [Lecture Slides - Selection on Observables 3](slides/L5_soo_part3.pdf)
 
+
+##### Seminar: Difference-in-Differences
+
+- [Seminar Code](seminars/seminar3/coding/
+- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
+- [Seminar Questions](seminars/seminar3/paper/)
+
+
 ##### Readings
 * [Manski, C.F., 1990. Nonparametric bounds on treatment effects. The American Economic Review, 80(2), pp.319-323.](https://www.jstor.org/stable/2006592) (very technical but worth reading, even if only for the intuition.)
 * [Imbens, G. W. (2003). Sensitivity to exogeneity assumptions in program evaluation. American Economic Review, 93(2), 126-132.](https://www.jstor.org/stable/3132212)
