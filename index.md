@@ -56,8 +56,8 @@ Statistics is best learned by doing. Formative problem sets will be released eve
 | 6  | _Reading week_ |  
 | 7  | [Difference-in-Differences 1](#7-difference-in-differences-1) |
 | 8  | [Difference-in-Differences 2](#8-difference-in-differences-2) | 
-| 9  | [Synthetic Control Methods](#9-synthetic-control-methods) |  
-| 10 | [Instrumental Variables](#10-instrumental-variables) |  
+| 9  | [Instrumental Variables 1](#9-instrumental-variables-1) |  
+| 10 | [Instrumental Variables 2](#10-instrumental-variables-2) |  
 | 11 | [Regression Discontinuity](#11-regression-discontinuity) | 
 
 ### Quick links to seminars
