@@ -180,14 +180,6 @@ This week we will consider partial identification and sensitivity analysis.
 
 - [Lecture Slides - Selection on Observables 3](slides/L5_soo_part3.pdf)
 
-
-##### Seminar: Difference-in-Differences
-
-- [Seminar Code](seminars/seminar3/coding/)
-- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
-- [Seminar Questions](seminars/seminar3/paper/)
-
-
 ##### Readings
 * [Manski, C.F., 1990. Nonparametric bounds on treatment effects. The American Economic Review, 80(2), pp.319-323.](https://www.jstor.org/stable/2006592) (very technical but worth reading, even if only for the intuition.)
 * [Imbens, G. W. (2003). Sensitivity to exogeneity assumptions in program evaluation. American Economic Review, 93(2), 126-132.](https://www.jstor.org/stable/3132212)
@@ -196,3 +188,28 @@ This week we will consider partial identification and sensitivity analysis.
 ##### Additional readings
 * [Rosenbaum, P. R., & Rubin, D. B. (1983). Assessing sensitivity to an unobserved binary covariate in an observational study with binary outcome. Journal of the Royal Statistical Society: Series B (Methodological), 45(2), 212-218.](https://www.jstor.org/stable/2345524) (technical but foundational)
 * [Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An automated approach to causal inference in discrete settings. Journal of the American Statistical Association, (just-accepted), 1-25.](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2023.2216909) (very technical but very interesting)
+
+#### 6. Reading Week
+
+#### 7. Difference-in-Differences 1
+
+We now introductional situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
+
+##### Lecture
+
+- [Lecture Slides - Difference-in-Differences 1](slides/L7_did_part1.pdf)
+
+##### Seminar: Difference-in-Differences
+
+- [Seminar Code](seminars/seminar3/coding/)
+- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
+- [Seminar Questions](seminars/seminar3/paper/)
+
+##### Readings
+* MHE: Section 5.2
+* TE: Chapter 18
+
+##### Additional readings
+* [Card, D., & Krueger, A. B. (1993). (1994). Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania. The American Economic Review, 84(4), 772-793.](https://davidcard.berkeley.edu/papers/njmin-aer.pdf) (foundational example)
+* [Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates?. The Quarterly journal of economics, 119(1), 249-275.](https://academic.oup.com/qje/article-abstract/119/1/249/1876068) (classic focused on inference)
+* [Roth, J. (2022). Pretest with caution: Event-study estimates after testing for parallel trends. American Economic Review: Insights, 4(3), 305-322.](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236) (technical, focused on issues with pre-trend tests)
