@@ -197,7 +197,7 @@ We now introductional situations in which a treatment is rolled out such that we
 
 ##### Lecture
 
-- [Lecture Slides - Difference-in-Differences 1](slides/L7_did_part1.pdf)
+- [Lecture Slides - Difference-in-Differences 1](slides/L7_DinD_part1.pdf)
 
 ##### Seminar: Difference-in-Differences
 
