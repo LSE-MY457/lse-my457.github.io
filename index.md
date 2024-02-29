@@ -201,9 +201,10 @@ We now introductional situations in which a treatment is rolled out such that we
 
 ##### Seminar: Difference-in-Differences
 
-- [Seminar Code](seminars/seminar3/coding/)
+- [Seminar Code](seminars/seminar3/coding/Class03-DifferenceInDifferences.Rmd)
+- [Seminar Data](seminars/seminar3/coding/simdata.rds)
 - [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
-- [Seminar Questions](seminars/seminar3/paper/)
+- [Seminar Questions](seminars/seminar3/paper/MY457_seminar3_questions.pdf)
 
 ##### Readings
 * MHE: Section 5.2
