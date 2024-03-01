@@ -193,7 +193,7 @@ This week we will consider partial identification and sensitivity analysis.
 
 #### 7. Difference-in-Differences 1
 
-We now introductional situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
+We now introduce situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
 
 ##### Lecture
 
@@ -218,3 +218,23 @@ We now introductional situations in which a treatment is rolled out such that we
 ##### Problem Set 3
 - [Problem Set](psets/pset3/pset3.pdf)
 - [Data](psets/pset3/Norway-MSD.dta)
+
+#### 8. Difference-in-Differences 2
+
+Continuing with difference-in-differences, in week 2 we broaden our focus to cases with more than 2 time periods. We will discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically staggered and non-saturating treatments, and heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
+
+##### Lecture
+
+- [Lecture Slides - Difference-in-Differences 1](slides/L8_DinD_part2.pdf)
+
+##### Readings
+* [Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. Journal of Financial Economics, 144(2), 370-395.](https://www.sciencedirect.com/science/article/pii/S0304405X22000204) (has some quite accessible discussions)
+* [Roth, J., Sant’Anna, P. H., Bilinski, A., & Poe, J. (2023). What’s trending in difference-in-differences? A synthesis of the recent econometrics literature. Journal of Econometrics.](https://doi.org/10.1016/j.jeconom.2023.03.008) (technical but a good overview)
+* TE: Chapter 18, especially 18.3
+
+##### Additional readings
+* [Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. Journal of Econometrics, 225(2), 254-277.](https://doi.org/10.1016/j.jeconom.2021.03.014) (very technical but parts can be read quite easily)
+* [Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. Journal of econometrics, 225(2), 200-230.](https://doi.org/10.1016/j.jeconom.2020.12.001)
+* [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
+* [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
+
