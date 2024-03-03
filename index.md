@@ -239,6 +239,7 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
 
 
+#### 9. Instrumental Variables
 
 ##### Seminar: Instrumental Variables
 
