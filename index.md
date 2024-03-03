@@ -238,3 +238,10 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 * [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
 
+
+
+##### Seminar: Instrumental Variables
+
+- [Seminar Paper](seminars/seminar4/paper/MY457_seminar4_paper.pdf) 
+
+
