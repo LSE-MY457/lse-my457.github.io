@@ -121,6 +121,7 @@ This week we will introduce the concept of randomization and its value for causa
 ##### Problem Set 1
 - [Problem Set](psets/pset1/pset1.pdf)
 - [Data](psets/pset1/how_to_elect_more_women.dta)
+- [Solution Set](psets/pset1/pset1_solutions.pdf)
 
 #### 3. Selection on Observables 1
 
