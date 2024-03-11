@@ -226,7 +226,7 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 
 ##### Lecture
 
-- [Lecture Slides - Difference-in-Differences 1](slides/L8_DinD_part2.pdf)
+- [Lecture Slides - Difference-in-Differences 2](slides/L8_DinD_part2.pdf)
 
 ##### Readings
 * [Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. Journal of Financial Economics, 144(2), 370-395.](https://www.sciencedirect.com/science/article/pii/S0304405X22000204) (has some quite accessible discussions)
@@ -240,7 +240,24 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
 
 
-#### 9. Instrumental Variables
+#### 9. Instrumental Variables 1
+
+We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
+
+
+##### Lecture
+
+- [Lecture Slides - Instrumental Variable 1](slides/L9_IV_part1.pdf)
+
+##### Readings
+* TE: Chapter 19
+* MHE: Chapter 4 OR CIS: Chapters 23 and 24 
+
+##### Additional readings
+* [Deaton, A. (2010). Instruments, randomization, and learning about development. Journal of economic literature, 48(2), 424-455.](https://www.aeaweb.org/articles?id=10.1257/jel.48.2.424)
+* [Imbens, G. W. (2010). Better LATE than nothing: Some comments on Deaton (2009) and Heckman and Urzua (2009). Journal of Economic literature, 48(2), 399-423.](https://www.aeaweb.org/articles?id=10.1257/jel.48.2.399)
+* [Angrist, J. D., Imbens, G. W., & Rubin, D. B. (1996). Identification of causal effects using instrumental variables. Journal of the American statistical Association, 91(434), 444-455.](https://www.tandfonline.com/doi/abs/10.1080/01621459.1996.10476902)
+* [Andrews, I., Stock, J. H., & Sun, L. (2019). Weak instruments in instrumental variables regression: Theory and practice. Annual Review of Economics, 11, 727-753.](annualreviews.org/doi/abs/10.1146/annurev-economics-080218-025643)
 
 ##### Seminar: Instrumental Variables
 
