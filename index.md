@@ -248,7 +248,7 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 
 ##### Lecture
 
-- [Lecture Slides - Instrumental Variable 1](slides/L9_IV_part1.pdf)
+- [Lecture Slides - Instrumental Variables 1](slides/L9_IV_part1.pdf)
 
 ##### Readings
 * TE: Chapter 19
