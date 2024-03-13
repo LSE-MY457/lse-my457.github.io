@@ -220,6 +220,7 @@ We now introduce situations in which a treatment is rolled out such that we have
 ##### Problem Set 3
 - [Problem Set](psets/pset3/pset3.pdf)
 - [Data](psets/pset3/Norway-MSD.dta)
+- [Solution Set](psets/pset3/pset3_solutions.pdf)
 
 #### 8. Difference-in-Differences 2
 
