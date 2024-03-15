@@ -267,3 +267,7 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 - [Seminar Questions](seminars/seminar4/paper/MY457_seminar4_questions.pdf)
 - [Seminar Code](seminars/seminar4/coding/Class04-InstrumentalVariables.Rmd)
 
+##### Problem Set 4
+- [Problem Set](psets/pset4/pset4.pdf)
+- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
+- [Solution Set](psets/pset4/pset4_solutions.pdf)
