@@ -246,9 +246,7 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 
 We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
 
-
 ##### Lecture
-
 - [Lecture Slides - Instrumental Variables 1](slides/L9_IV_part1.pdf)
 
 ##### Readings
@@ -271,3 +269,19 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 - [Problem Set](psets/pset4/pset4.pdf)
 - [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
 - [Solution Set](psets/pset4/pset4_solutions.pdf)
+
+#### 10. Instrumental Variables 2
+
+We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
+
+##### Lecture
+- [Lecture Slides - Instrumental Variables 2](slides/L10_IV_part2.pdf)
+
+##### Readings
+* [Cunningham, S. (2021). Causal inference: The mixtape. Yale university press. Section 7.8.](https://mixtape.scunning.com/07-instrumental_variables)
+
+##### Additional readings
+* [Goldsmith-Pinkham, P., Sorkin, I., & Swift, H. (2020). Bartik instruments: What, when, why, and how. American Economic Review, 110(8), 2586-2624.](https://www.aeaweb.org/articles?id=10.1257/aer.20181047)
+* [Borusyak, K., Hull, P., & Jaravel, X. (2022). Quasi-experimental shift-share research designs. The Review of Economic Studies, 89(1), 181-213.](https://academic.oup.com/restud/article-abstract/89/1/181/6294942)
+* [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
+
