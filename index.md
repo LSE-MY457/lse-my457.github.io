@@ -272,7 +272,7 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 
 #### 10. Instrumental Variables 2
 
-We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
+Extending our investigation of IV designs, we focus today on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, and examiner designs. 
 
 ##### Lecture
 - [Lecture Slides - Instrumental Variables 2](slides/L10_IV_part2.pdf)
