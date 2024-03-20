@@ -285,3 +285,12 @@ Extending our investigation of IV designs, we focus today on the interpertation 
 * [Borusyak, K., Hull, P., & Jaravel, X. (2022). Quasi-experimental shift-share research designs. The Review of Economic Studies, 89(1), 181-213.](https://academic.oup.com/restud/article-abstract/89/1/181/6294942)
 * [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
 
+
+#### 11. Regression Discontinuity
+
+##### Seminar: Regression Discontinuity
+
+- [Seminar Paper](seminars/seminar5/paper/MY457_seminar5_paper.pdf) 
+- [Seminar Questions](seminars/seminar5/paper/MY457_seminar5_questions.pdf)
+- [Seminar Code](seminars/seminar5/coding/Class05-RegressionDiscontinuity.Rmd)
+
