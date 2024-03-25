@@ -287,6 +287,20 @@ Extending our investigation of IV designs, we focus today on the interpertation 
 
 
 #### 11. Regression Discontinuity
+We wrap up our tour of causal inference with a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
+
+##### Lecture
+- [Lecture Slides - Regression Discontinuity](slides/L11_RDD.pdf)
+
+##### Readings
+* MHE: Chapter 6
+* TE: Chapter 20
+* [Cattaneo, M. D., & Titiunik, R. (2022). Regression discontinuity designs. Annual Review of Economics, 14, 821-851.](https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409)
+
+##### Additional readings
+* [Lee, D. S., & Lemieux, T. (2010). Regression discontinuity designs in economics. Journal of economic literature, 48(2), 281-355.](https://www.aeaweb.org/articles?id=10.1257/jel.48.2.281) (strongly recommended)
+* [Keele, L. J., & Titiunik, R. (2015). Geographic boundaries as regression discontinuities. Political Analysis, 23(1), 127-155.](https://www.cambridge.org/core/journals/political-analysis/article/geographic-boundaries-as-regression-discontinuities/2A59F3077F49AD2B908B531F6E458430)
+* If very interested, see: Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2020). A practical introduction to regression discontinuity designs: Foundations. Cambridge University Press.
 
 ##### Seminar: Regression Discontinuity
 
