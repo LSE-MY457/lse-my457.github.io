@@ -301,8 +301,8 @@ We wrap up our tour of causal inference with a deep dive into regression discont
 * [Lee, D. S., & Lemieux, T. (2010). Regression discontinuity designs in economics. Journal of economic literature, 48(2), 281-355.](https://www.aeaweb.org/articles?id=10.1257/jel.48.2.281) (strongly recommended)
 * [Keele, L. J., & Titiunik, R. (2015). Geographic boundaries as regression discontinuities. Political Analysis, 23(1), 127-155.](https://www.cambridge.org/core/journals/political-analysis/article/geographic-boundaries-as-regression-discontinuities/2A59F3077F49AD2B908B531F6E458430)
 * If very interested, see: 
-** Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2020). A practical introduction to regression discontinuity designs: Foundations. Cambridge University Press.
-** Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2024). A Practical Introduction to Regression Discontinuity Designs: Extensions. Cambridge: Cambridge University Press.
+- Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2020). A practical introduction to regression discontinuity designs: Foundations. Cambridge University Press.
+- Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2024). A Practical Introduction to Regression Discontinuity Designs: Extensions. Cambridge: Cambridge University Press.
 
 ##### Seminar: Regression Discontinuity
 
