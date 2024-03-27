@@ -1,0 +1,106 @@
+---
+title: "MY457/MY557: Causal Inference for Experimental and Observational Studies"
+subtitle: "Class 5: Regression Discontinuity Designs"
+author: ""
+date: ''
+output:
+  html_document: default
+  pdf_document: default
+header-includes: 
+  - \usepackage{tikz}
+  - \usepackage{pgfplots}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+First, we will load in some required packages:
+
+```{r,warning=F,message=F}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(rdrobust)
+library(rddensity)
+library(rddtools)
+library(ggthemes)
+```
+
+# (1) First in-class exercise: Implementing estimation for regression discontinuity designs
+
+In this part of the seminar we show examples of how to estimate the treatment effect using RDD. This is done using a single simulated dataset, for demonstration purposes. We will mostly focus functions from the rdrobust package. Let's load the dataset.
+
+```{r}
+# LOAD DATA
+df <- readRDS("simdata.rds") %>% mutate(X = X - c)
+```
+
+[A] RDD plot: First, exploring the data graphically using the basic RDD plot:
+
+```{r}
+# PLOT DATA: OUTCOME VS. RUNNING VARIABLE (LINEAR FIT)
+temp <- df %>% 
+  mutate(X = round(X, 3)) %>%
+  group_by(X, Outcome2) %>% summarize(Y = mean(Y, na.rm = T)) %>% ungroup()
+ggplot() +
+  geom_jitter(data = temp, aes(x = X, y = Y, color = Outcome2), alpha = 0.5) +
+  geom_smooth(data = temp, aes(x = X, y = Y, color = Outcome2), size = 1.5, method = "lm", formula = y ~ x, se = F) +
+  geom_vline(xintercept = 0, color = 'red') +
+  scale_color_fivethirtyeight() + theme_bw()
+```
+
+
+```{r}
+# PLOT DATA: OUTCOME VS. RUNNING VARIABLE (QUADRATIC FIT)
+ggplot() +
+  geom_jitter(data = temp, aes(x = X, y = Y, color = Outcome2), alpha = 0.5) +
+  geom_smooth(data = temp, aes(x = X, y = Y, color = Outcome2), size = 1.5, method = "lm", formula = y ~ poly(x, 2), se = F) +
+  geom_vline(xintercept = 0, color = 'red') +
+  scale_color_fivethirtyeight() + theme_bw()
+```
+
+```{r}
+# PLOT DATA: OUTCOME VS. RUNNING VARIABLE (QUADRATIC FIT)
+rdplot(df$Y, df$X, c = 0, nbins = 100)
+```
+
+
+[B] Selecting the bandwidth: there are different version how to determine the bandwidth size. One "modern" way of selecting bandwidth size is by using the method proposed by Calonico, Cattaneo and Titiunik (2014a), Calonico, Cattaneo and Farrell (2018), Calonico, Cattaneo, Farrell and Titiunik (2019) and Calonico, Cattaneo and Farrell (2020). The function allows you to define different parameters, including the kernel type and the number of polynomials (of the running variable) included on the right-hand-side.
+
+```{r}
+# BANDWIDTH SELECTION
+bw <- rdbwselect(y = df$Y, x = df$X, c = 0, p = 1, kernel = 'triangular', bwselect = 'mserd') %>% .[["bws"]] %>% .[1]
+bw
+```
+
+[C] RDD estimation: to estimate the ATT, we only one function: rdrobust. Again, this function enables to set various parameter values. Let's play around with some of them.
+
+```{r}
+# 1. LINEAR FORM
+rdrobust(y = df$Y, x = df$X, c = 0, p = 1, q = 2, h = bw, kernel = "tri", all = T) %>% summary()
+
+# 2. QUADRATIC FORM
+rdrobust(y = df$Y, x = df$X, c = 0, p = 2, h = bw, kernel = "tri", all = T) %>% summary()
+
+# 3. INCREASE BANDWIDTH SIZE
+rdrobust(y = df$Y, x = df$X, c = 0, p = 1, h = bw*2, kernel = "tri", all = T) %>% summary()
+
+# 4. DECREASE BANDWIDTH SIZE
+rdrobust(y = df$Y, x = df$X, c = 0, p = 1, h = bw/3, kernel = "tri", all = T) %>% summary()
+
+# 5. CHANGE THE KERNEL FUNCTION TO UNIFORM
+rdrobust(y = df$Y, x = df$X, c = 0, p = 1, h = bw, kernel = "uniform", all = T) %>% summary()
+
+```
+
+[D] Checks to assess sorting/manipulation: we can test whether the density changes discontinously around the cut-off with the McCracy test.
+
+```{r}
+# SORTING/MANIPULATION TEST: (see McCracy 2008)
+dens_test <- rddensity(X = df$X)
+dens_test[["test"]][["p_jk"]] # p-value of McCracy test
+rdplotdensity(dens_test, df$X, histFillCol = 'gray80', histFillShade = 1, CIshade = 0.4, lwd = 1)
+```
+
+
