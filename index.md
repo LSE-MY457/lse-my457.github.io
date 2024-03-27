@@ -309,6 +309,7 @@ We wrap up our tour of causal inference with a deep dive into regression discont
 - [Seminar Paper](seminars/seminar5/paper/MY457_seminar5_paper.pdf) 
 - [Seminar Questions](seminars/seminar5/paper/MY457_seminar5_questions.pdf)
 - [Seminar Code](seminars/seminar5/coding/Class05-RegressionDiscontinuity.Rmd)
+- [Seminar Data](seminars/seminar5/coding/simdata.rds)
 
 ##### Problem Set 5
 - [Problem Set](psets/pset5/pset5.pdf)
