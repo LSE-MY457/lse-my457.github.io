@@ -313,7 +313,7 @@ We wrap up our tour of causal inference with a deep dive into regression discont
 
 ##### Problem Set 5
 - [Problem Set](psets/pset5/pset5.pdf)
-- [Data](psets/pset5/XXXX.dta)
+- [Data](psets/pset5/pmgsy_working_aer_mainsample_reduced.dta)
 - [Solution Set](psets/pset5/pset5_solutions.pdf)
 
 [COURSE ENDS]
