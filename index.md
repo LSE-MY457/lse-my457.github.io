@@ -246,9 +246,7 @@ Continuing with difference-in-differences, in week 2 we broaden our focus to cas
 
 We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
 
-
 ##### Lecture
-
 - [Lecture Slides - Instrumental Variables 1](slides/L9_IV_part1.pdf)
 
 ##### Readings
@@ -267,3 +265,55 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 - [Seminar Questions](seminars/seminar4/paper/MY457_seminar4_questions.pdf)
 - [Seminar Code](seminars/seminar4/coding/Class04-InstrumentalVariables.Rmd)
 
+##### Problem Set 4
+- [Problem Set](psets/pset4/pset4.pdf)
+- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
+- [Solution Set](psets/pset4/pset4_solutions.pdf)
+
+#### 10. Instrumental Variables 2
+
+Extending our investigation of IV designs, we focus today on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, and examiner designs. 
+
+##### Lecture
+- [Lecture Slides - Instrumental Variables 2](slides/L10_IV_part2.pdf)
+
+##### Readings
+* [Cunningham, S. (2021). Causal inference: The mixtape. Yale university press. Section 7.8.](https://mixtape.scunning.com/07-instrumental_variables)
+
+##### Additional readings
+* [Goldsmith-Pinkham, P., Sorkin, I., & Swift, H. (2020). Bartik instruments: What, when, why, and how. American Economic Review, 110(8), 2586-2624.](https://www.aeaweb.org/articles?id=10.1257/aer.20181047)
+* [Borusyak, K., Hull, P., & Jaravel, X. (2022). Quasi-experimental shift-share research designs. The Review of Economic Studies, 89(1), 181-213.](https://academic.oup.com/restud/article-abstract/89/1/181/6294942)
+* [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
+
+
+#### 11. Regression Discontinuity
+We wrap up our tour of causal inference with a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
+
+##### Lecture
+- [Lecture Slides - Regression Discontinuity](slides/L11_RDD.pdf)
+
+##### Readings
+* MHE: Chapter 6
+* TE: Chapter 20
+* [Cattaneo, M. D., & Titiunik, R. (2022). Regression discontinuity designs. Annual Review of Economics, 14, 821-851.](https://www.annualreviews.org/content/journals/10.1146/annurev-economics-051520-021409)
+
+##### Additional readings
+* [Lee, D. S., & Lemieux, T. (2010). Regression discontinuity designs in economics. Journal of economic literature, 48(2), 281-355.](https://www.jstor.org/stable/20778728) (strongly recommended)
+* [Keele, L. J., & Titiunik, R. (2015). Geographic boundaries as regression discontinuities. Political Analysis, 23(1), 127-155.](https://www.cambridge.org/core/journals/political-analysis/article/geographic-boundaries-as-regression-discontinuities/2A59F3077F49AD2B908B531F6E458430)
+* If very interested, see: 
+  - Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2020). A practical introduction to regression discontinuity designs: Foundations. Cambridge University Press.
+  - Cattaneo, M. D., Idrobo, N., & Titiunik, R. (2024). A Practical Introduction to Regression Discontinuity Designs: Extensions. Cambridge: Cambridge University Press.
+
+##### Seminar: Regression Discontinuity
+
+- [Seminar Paper](seminars/seminar5/paper/MY457_seminar5_paper.pdf) 
+- [Seminar Questions](seminars/seminar5/paper/MY457_seminar5_questions.pdf)
+- [Seminar Code](seminars/seminar5/coding/Class05-RegressionDiscontinuity.Rmd)
+- [Seminar Data](seminars/seminar5/coding/simdata.rds)
+
+##### Problem Set 5
+- [Problem Set](psets/pset5/pset5.pdf)
+- [Data](psets/pset5/pmgsy_working_aer_mainsample_reduced.dta)
+- [Solution Set](psets/pset5/pset5_solutions.pdf)
+
+[COURSE ENDS]
