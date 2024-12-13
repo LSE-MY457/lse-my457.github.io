@@ -2,6 +2,7 @@ theme: just-the-docs
 title: 'LSE MY457: Causal Inference for Observational and Experimental Studies'
 description: 'Course Website for Winter Term 2024'
 show_downloads: false
+
 plugins:
   - jekyll-default-layout
 
