@@ -10,11 +10,11 @@ colorlinks: true
   
 ### Instructors
 
-* Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Methodology.
-* Seminar leader: [Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk), Methodology.
-* GTA (no office hours): [Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk), Social Policy. 
+* Course convenor and lecturer: <ins>[Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk)</ins>, Methodology.
+* Seminar leader: <ins>[Dr. Michael Ganslmeier](mailto:m.g.ganslmeier@lse.ac.uk)</ins>, Methodology.
+* GTA (no office hours): <ins>[Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk)</ins>, Social Policy. 
 
-Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1232310). We will not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please do email or attend office hours. 
+Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the <ins>[class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1232310)</ins>. We will not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please do email or attend office hours. 
 
 ### Readings and textbooks
 
@@ -34,7 +34,7 @@ _Note_: if you are particularly interested in graphical models and their applica
 
 ### Formative problem sets
 
-Statistics is best learned by doing. Formative problem sets will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+Statistics is best learned by doing. Formative problem sets will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this <ins>[problem set template](psets/template/pset_template.Rmd)</ins>. If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
