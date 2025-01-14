@@ -34,15 +34,16 @@ _Note_: if you are particularly interested in graphical models and their applica
 
 ### Formative problem sets
 
-Statistics is best learned by doing. Formative problem sets will be released every two weeks at 5pm, after seminar. You must submit one week later at 5pm, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+Statistics is best learned by doing. There will be six problem sets, released at 5pm on Wednesdays. You must submit one weeks later at 11am, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
-| 1 | [Formative problem set 1](#problem-set-1) | 25 January 2023 - 5pm | 1 February 2023 - 5pm |
-| 2 | [Formative problem set 2](#problem-set-2) | 8 February 2023 - 5pm | 15 February 2023 - 5pm  |
-| 3 | [Formative problem set 3](#problem-set-3) | 29 February 2023 - 5pm | 7 March 2023 - 5pm  |
-| 4 | [Formative problem set 4](#problem-set-4) | 14 March 2023 - 5pm  | 21 March 2023 - 5pm  |
-| 5 | [Formative problem set 5](#problem-set-5) | 28 March 2023 - 5pm | 4 April 2023 - 5pm  |
+| 1 | [Formative problem set 1](#problem-set-1) | 29 January 2025 - 5pm | 5 February 2025 - 11am |
+| 2 | [Formative problem set 2](#problem-set-2) | 12 February 2025 - 5pm | 19 February 2025 - 11am  |
+| 3 | [Formative problem set 3](#problem-set-3) | 19 February 2025 - 5pm | 5 March 2025 - 11am  |
+| 4 | [Formative problem set 3](#problem-set-4) | 12 March 2025 - 5pm | 19 March 2025 - 11am  |
+| 5 | [Formative problem set 4](#problem-set-5) | 19 March 2025 - 5pm  | 26 March 2025 - 11am  |
+| 6 | [Formative problem set 5](#problem-set-6) | 2 April 2025 - 5pm | 9 April 2025 - 11am  |
 
 ### Quick links to lectures
 
@@ -127,8 +128,6 @@ This week we will introduce the concept of randomization and its value for causa
 
 This week we will depart from the safe shores of randomization, into the dangerous waters of observational research design. We will begin with a theoretical exploration of the selection on observables design -- its assumptions and identification results -- using both potential outcomes and graphical theory. 
 
-We will then begin an extended discussion (which will continue next week and the week after) of estimation of causal estimands in this setting, focusing first on subclassification. **Update**: Please note that we did not cover subclassification in the lectures. You can still read the slides to see how it works, but it will not be examinable this year. 
-
 ##### Lecture
 
 - [Lecture Slides - Selection on Observables 1](slides/L3_soo_part1.pdf)
@@ -190,6 +189,12 @@ This week we will consider partial identification and sensitivity analysis.
 ##### Additional readings
 * [Rosenbaum, P. R., & Rubin, D. B. (1983). Assessing sensitivity to an unobserved binary covariate in an observational study with binary outcome. Journal of the Royal Statistical Society: Series B (Methodological), 45(2), 212-218.](https://www.jstor.org/stable/2345524) (technical but foundational)
 * [Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An automated approach to causal inference in discrete settings. Journal of the American Statistical Association, (just-accepted), 1-25.](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2023.2216909) (very technical but very interesting)
+
+##### Problem Set 3
+- [Problem Set](psets/pset3/pset3.pdf)
+- [Data](psets/pset3/XXXXXX.dta)
+- [Solution Set](psets/pset3/pset3_solutions.pdf)
+
 
 #### 6. Reading Week
 
