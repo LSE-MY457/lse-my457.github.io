@@ -195,59 +195,9 @@ This week we will consider partial identification and sensitivity analysis.
 - [Data](psets/pset3/XXXXXX.dta)
 - [Solution Set](psets/pset3/pset3_solutions.pdf)
 
-
 #### 6. Reading Week
 
-#### 7. Difference-in-Differences 1
-
-We now introduce situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
-
-##### Lecture
-
-- [Lecture Slides - Difference-in-Differences 1](slides/L7_DinD_part1.pdf)
-
-##### Seminar: Difference-in-Differences
-
-- [Seminar Code](seminars/seminar3/coding/Class03-DifferenceInDifferences.Rmd)
-- [Seminar Data](seminars/seminar3/coding/simdata.rds)
-- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
-- [Seminar Questions](seminars/seminar3/paper/MY457_seminar3_questions.pdf)
-
-##### Readings
-* MHE: Section 5.2
-* TE: Chapter 18
-
-##### Additional readings
-* [Card, D., & Krueger, A. B. (1993). (1994). Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania. The American Economic Review, 84(4), 772-793.](https://davidcard.berkeley.edu/papers/njmin-aer.pdf) (foundational example)
-* [Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates?. The Quarterly journal of economics, 119(1), 249-275.](https://academic.oup.com/qje/article-abstract/119/1/249/1876068) (classic focused on inference)
-* [Roth, J. (2022). Pretest with caution: Event-study estimates after testing for parallel trends. American Economic Review: Insights, 4(3), 305-322.](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236) (technical, focused on issues with pre-trend tests)
-
-##### Problem Set 3
-- [Problem Set](psets/pset3/pset3.pdf)
-- [Data](psets/pset3/Norway-MSD.dta)
-- [Solution Set](psets/pset3/pset3_solutions.pdf)
-
-#### 8. Difference-in-Differences 2
-
-Continuing with difference-in-differences, in week 2 we broaden our focus to cases with more than 2 time periods. We will discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically staggered and non-saturating treatments, and heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
-
-##### Lecture
-
-- [Lecture Slides - Difference-in-Differences 2](slides/L8_DinD_part2.pdf)
-
-##### Readings
-* [Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. Journal of Financial Economics, 144(2), 370-395.](https://www.sciencedirect.com/science/article/pii/S0304405X22000204) (has some quite accessible discussions)
-* [Roth, J., Sant’Anna, P. H., Bilinski, A., & Poe, J. (2023). What’s trending in difference-in-differences? A synthesis of the recent econometrics literature. Journal of Econometrics.](https://doi.org/10.1016/j.jeconom.2023.03.008) (technical but a good overview)
-* TE: Chapter 18, especially 18.3
-
-##### Additional readings
-* [Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. Journal of Econometrics, 225(2), 254-277.](https://doi.org/10.1016/j.jeconom.2021.03.014) (very technical but parts can be read quite easily)
-* [Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. Journal of econometrics, 225(2), 200-230.](https://doi.org/10.1016/j.jeconom.2020.12.001)
-* [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
-* [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
-
-
-#### 9. Instrumental Variables 1
+#### 7. Instrumental Variables 1
 
 We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
 
@@ -275,7 +225,7 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 - [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
 - [Solution Set](psets/pset4/pset4_solutions.pdf)
 
-#### 10. Instrumental Variables 2
+#### 8. Instrumental Variables 2
 
 Extending our investigation of IV designs, we focus today on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, and examiner designs. 
 
@@ -291,7 +241,7 @@ Extending our investigation of IV designs, we focus today on the interpertation 
 * [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
 
 
-#### 11. Regression Discontinuity
+#### 9. Regression Discontinuity
 We wrap up our tour of causal inference with a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
 
 ##### Lecture
@@ -320,5 +270,54 @@ We wrap up our tour of causal inference with a deep dive into regression discont
 - [Problem Set](psets/pset5/pset5.pdf)
 - [Data](psets/pset5/pmgsy_working_aer_mainsample_reduced.dta)
 - [Solution Set](psets/pset5/pset5_solutions.pdf)
+
+#### 10. Difference-in-Differences 1
+
+We now introduce situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
+
+##### Lecture
+
+- [Lecture Slides - Difference-in-Differences 1](slides/L7_DinD_part1.pdf)
+
+##### Seminar: Difference-in-Differences
+
+- [Seminar Code](seminars/seminar3/coding/Class03-DifferenceInDifferences.Rmd)
+- [Seminar Data](seminars/seminar3/coding/simdata.rds)
+- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
+- [Seminar Questions](seminars/seminar3/paper/MY457_seminar3_questions.pdf)
+
+##### Readings
+* MHE: Section 5.2
+* TE: Chapter 18
+
+##### Additional readings
+* [Card, D., & Krueger, A. B. (1993). (1994). Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania. The American Economic Review, 84(4), 772-793.](https://davidcard.berkeley.edu/papers/njmin-aer.pdf) (foundational example)
+* [Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates?. The Quarterly journal of economics, 119(1), 249-275.](https://academic.oup.com/qje/article-abstract/119/1/249/1876068) (classic focused on inference)
+* [Roth, J. (2022). Pretest with caution: Event-study estimates after testing for parallel trends. American Economic Review: Insights, 4(3), 305-322.](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236) (technical, focused on issues with pre-trend tests)
+
+#### 11. Difference-in-Differences 2
+
+Continuing with difference-in-differences, in week 2 we broaden our focus to cases with more than 2 time periods. We will discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically staggered and non-saturating treatments, and heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
+
+##### Lecture
+
+- [Lecture Slides - Difference-in-Differences 2](slides/L8_DinD_part2.pdf)
+
+##### Readings
+* [Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. Journal of Financial Economics, 144(2), 370-395.](https://www.sciencedirect.com/science/article/pii/S0304405X22000204) (has some quite accessible discussions)
+* [Roth, J., Sant’Anna, P. H., Bilinski, A., & Poe, J. (2023). What’s trending in difference-in-differences? A synthesis of the recent econometrics literature. Journal of Econometrics.](https://doi.org/10.1016/j.jeconom.2023.03.008) (technical but a good overview)
+* TE: Chapter 18, especially 18.3
+
+##### Additional readings
+* [Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. Journal of Econometrics, 225(2), 254-277.](https://doi.org/10.1016/j.jeconom.2021.03.014) (very technical but parts can be read quite easily)
+* [Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. Journal of econometrics, 225(2), 200-230.](https://doi.org/10.1016/j.jeconom.2020.12.001)
+* [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
+* [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
+
+##### Problem Set 6
+- [Problem Set](psets/pset6/pset6.pdf)
+- [Data](psets/pset6/Norway-MSD.dta)
+- [Solution Set](psets/pset6/pset6_solutions.pdf)
+
 
 [COURSE ENDS]
