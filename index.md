@@ -41,9 +41,9 @@ Statistics is best learned by doing. There will be six problem sets, released at
 | 1 | [Formative problem set 1](#problem-set-1) | 29 January 2025 - 5pm | 5 February 2025 - 11am |
 | 2 | [Formative problem set 2](#problem-set-2) | 12 February 2025 - 5pm | 19 February 2025 - 11am  |
 | 3 | [Formative problem set 3](#problem-set-3) | 19 February 2025 - 5pm | 5 March 2025 - 11am  |
-| 4 | [Formative problem set 3](#problem-set-4) | 12 March 2025 - 5pm | 19 March 2025 - 11am  |
-| 5 | [Formative problem set 4](#problem-set-5) | 19 March 2025 - 5pm  | 26 March 2025 - 11am  |
-| 6 | [Formative problem set 5](#problem-set-6) | 2 April 2025 - 5pm | 9 April 2025 - 11am  |
+| 4 | [Formative problem set 4](#problem-set-4) | 12 March 2025 - 5pm | 19 March 2025 - 11am  |
+| 5 | [Formative problem set 5](#problem-set-5) | 19 March 2025 - 5pm  | 26 March 2025 - 11am  |
+| 6 | [Formative problem set 6](#problem-set-6) | 2 April 2025 - 5pm | 9 April 2025 - 11am  |
 
 ### Quick links to lectures
 
@@ -220,11 +220,6 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 - [Seminar Questions](seminars/seminar4/paper/MY457_seminar4_questions.pdf)
 - [Seminar Code](seminars/seminar4/coding/Class04-InstrumentalVariables.Rmd)
 
-##### Problem Set 4
-- [Problem Set](psets/pset4/pset4.pdf)
-- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
-- [Solution Set](psets/pset4/pset4_solutions.pdf)
-
 #### 8. Instrumental Variables 2
 
 Extending our investigation of IV designs, we focus today on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, and examiner designs. 
@@ -240,9 +235,13 @@ Extending our investigation of IV designs, we focus today on the interpertation 
 * [Borusyak, K., Hull, P., & Jaravel, X. (2022). Quasi-experimental shift-share research designs. The Review of Economic Studies, 89(1), 181-213.](https://academic.oup.com/restud/article-abstract/89/1/181/6294942)
 * [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
 
+##### Problem Set 4
+- [Problem Set](psets/pset4/pset4.pdf)
+- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
+- [Solution Set](psets/pset4/pset4_solutions.pdf)
 
 #### 9. Regression Discontinuity
-We wrap up our tour of causal inference with a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
+We do a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
 
 ##### Lecture
 - [Lecture Slides - Regression Discontinuity](slides/L11_RDD.pdf)
