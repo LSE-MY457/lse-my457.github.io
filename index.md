@@ -55,11 +55,11 @@ Statistics is best learned by doing. There will be six problem sets, released at
 | 4  | [Selection on Observables 2](#4-selection-on-observables-2) | 
 | 5  | [Selection on Observables 3](#5-selection-on-observables-3) | 
 | 6  | _Reading week_ |  
-| 7  | [Difference-in-Differences 1](#7-difference-in-differences-1) |
-| 8  | [Difference-in-Differences 2](#8-difference-in-differences-2) | 
-| 9  | [Instrumental Variables 1](#9-instrumental-variables-1) |  
-| 10 | [Instrumental Variables 2](#10-instrumental-variables-2) |  
-| 11 | [Regression Discontinuity](#11-regression-discontinuity) | 
+| 7  | [Instrumental Variables 1](#9-instrumental-variables-1) |  
+| 8  | [Instrumental Variables 2](#10-instrumental-variables-2) |  
+| 9  | [Regression Discontinuity](#11-regression-discontinuity) | 
+| 10 | [Difference-in-Differences 1](#7-difference-in-differences-1) |
+| 11 | [Difference-in-Differences 2](#8-difference-in-differences-2) | 
 
 ### Quick links to seminars
 
