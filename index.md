@@ -298,7 +298,7 @@ We now introduce one of the most popular research designs for applied causal inf
 
 #### 11. Difference-in-Differences 2
 
-We continue our exploration of DiD, broadening our focus to cases with more than 2 time periods. We discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically for staggered and non-saturating treatments, and cases with heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
+We continue our exploration of DiD, broadening our focus to cases with more than 2 time periods. We discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically for staggered and non-saturating treatments, and cases with heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. We conclude with a very brief foray into the synthetic control method. 
 
 ##### Lecture
 
