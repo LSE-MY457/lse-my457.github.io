@@ -314,6 +314,7 @@ We continue our exploration of DiD, broadening our focus to cases with more than
 * [Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. Journal of econometrics, 225(2), 200-230.](https://doi.org/10.1016/j.jeconom.2020.12.001)
 * [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
+* [Abadie, A., (2021). Using synthetic controls: Feasibility, data requirements, and methodological aspects. Journal of economic literature, 59(2), pp.391-425.](https://www.aeaweb.org/articles?id=10.1257/jel.20191450)
 
 ##### Problem Set 6
 - [Problem Set](psets/pset6/pset6.pdf)
