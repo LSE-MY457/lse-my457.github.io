@@ -67,9 +67,9 @@ Statistics is best learned by doing. There will be six problem sets, released at
 |:--:|:-------|
 | 2  | [Causality and Randomization](#seminar-causality-and-randomization) |  
 | 4  | [Selection on Observables](#seminar-selection-on-observables) |
-| 7  | [Difference-in-Differences](#seminar-difference-in-differences) |
-| 9  | [Instrumental Variables](#seminar-instrumental-variables) |  
-| 11 | [Regression Discontinuity](#seminar-regression-discontinuity) | 
+| 7  | [Instrumental Variables](#seminar-instrumental-variables) |  
+| 9  | [Regression Discontinuity](#seminar-regression-discontinuity) | 
+| 11 | [Difference-in-Differences](#seminar-difference-in-differences) |
 
 ### Detailed course schedule
 
