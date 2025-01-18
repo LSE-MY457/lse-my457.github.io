@@ -153,7 +153,6 @@ We consider the three most frequently seen estimation strategies for selection-o
 
 ##### Seminar: Selection on Observables
 
-- [Group allocation](seminars/group_allocation_for_presentations.xlsx)
 - [Seminar Code](seminars/seminar2/coding/Class02-MatchingAndWeighting.Rmd)
 - [Seminar Paper](seminars/seminar2/paper/MY457_seminar2_paper.pdf) 
 - [Seminar Questions](seminars/seminar2/paper/MY457_seminar2_questions.pdf)
