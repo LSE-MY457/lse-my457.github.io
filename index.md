@@ -79,9 +79,9 @@ _Note:_ Links to slides and code will be updated/added in advance of each week's
 
 #### 1. Causal Frameworks
 
-This week begins with an introduction to the class, both substantively and administratively. 
+We begin with an introduction to the class, both substantively and administratively. 
 
-We then introduce the potential outcomes framework, which will provide the technical foundations that are used throughout the rest of the class. We will also briefly introduce the graphical approach to causal inference. 
+We then introduce the potential outcomes framework, which will provide the technical foundations that are used throughout the rest of the class. We will also briefly introduce the graphical model for causal inference. 
 
 ##### Lecture
 
@@ -100,7 +100,7 @@ We then introduce the potential outcomes framework, which will provide the techn
 
 #### 2. Randomization
 
-This week we will introduce the concept of randomization and its value for causal inference. We will discuss, at a high level, design, analysis, and inference in randomized experiments. 
+We introduce the concept of randomization and its value for causal inference. We discuss, at a high level, design, analysis, and inference for randomized experiments. 
 
 ##### Lecture
 
@@ -128,7 +128,7 @@ This week we will introduce the concept of randomization and its value for causa
 
 #### 3. Selection on Observables 1
 
-This week we will depart from the safe shores of randomization, into the dangerous waters of observational research design. We will begin with a theoretical exploration of the selection on observables design -- its assumptions and identification results -- using both potential outcomes and graphical theory. 
+We depart from the safe shores of controlled randomization, into the treacherous waters of observational research design. We will begin with a theoretical exploration of the selection on observables design (SOO) -- its assumptions and identification results -- using both potential outcomes and graphical theory. 
 
 ##### Lecture
 
@@ -145,7 +145,7 @@ This week we will depart from the safe shores of randomization, into the dangero
 
 #### 4. Selection on Observables 2
 
-This week we will consider the three core estimation strategies for selection-on-observables designs: matching (including propensity scores), weighting, and regression. 
+We consider the three most frequently seen estimation strategies for selection-on-observables designs: matching (including propensity scores), weighting, and regression. 
 
 ##### Lecture
 
@@ -177,7 +177,7 @@ This week we will consider the three core estimation strategies for selection-on
 
 #### 5. Selection on Observables 3
 
-This week we will consider partial identification and sensitivity analysis. 
+We consider what happens if we are willing to weaken the assumptions underpinning our research designs, exploring partial identification and sensitivity analysis. 
 
 ##### Lecture
 
@@ -201,7 +201,7 @@ This week we will consider partial identification and sensitivity analysis.
 
 #### 7. Instrumental Variables 1
 
-We now move onto a new research design: instrumental variables (IV). In week 1 we introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
+We now move onto a new research design: instrumental variables (IV). We introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
 
 ##### Lecture
 - [Lecture Slides - Instrumental Variables 1](slides/L9_IV_part1.pdf)
@@ -224,7 +224,7 @@ We now move onto a new research design: instrumental variables (IV). In week 1 w
 
 #### 8. Instrumental Variables 2
 
-Extending our investigation of IV designs, we focus today on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, and examiner designs. 
+Extending our investigation of IV designs, we focus on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, examiner designs, and recentered IV.
 
 ##### Lecture
 - [Lecture Slides - Instrumental Variables 2](slides/L10_IV_part2.pdf)
@@ -243,7 +243,7 @@ Extending our investigation of IV designs, we focus today on the interpertation 
 - [Solution Set](psets/pset4/pset4_solutions.pdf)
 
 #### 9. Regression Discontinuity
-We do a deep dive into regression discontinuity designs. We cover both sharp and fuzzy RDDs.  
+We move to the next core research design, regression discontinuity (RD), considering modern approaches to both sharp and fuzzy RD settings.   
 
 ##### Lecture
 - [Lecture Slides - Regression Discontinuity](slides/L11_RDD.pdf)
@@ -274,7 +274,7 @@ We do a deep dive into regression discontinuity designs. We cover both sharp and
 
 #### 10. Difference-in-Differences 1
 
-We now introduce situations in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. Instead of relying on conditional ignorability in treatment assignment between units, we will now rely on assumptions about trends over time. In week 1 we will focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods.
+We now introduce one of the most popular research designs for applied causal inference, difference-in-differences (DiD). We consider cases in which a treatment is rolled out such that we have variation over two dimensions: _time_ and _units_. We focus almost exclusively on canonical cases in which we have only two time-periods and two treatment groups of units. We will close by briefly considering falsification tests in situations with two pre-treatment periods. Diverging from the previous approaches in which we rely on assumptions about the nature of treatment assignment, we introduce new assumptions about trends in potential outcomes over time. 
 
 ##### Lecture
 
@@ -298,7 +298,7 @@ We now introduce situations in which a treatment is rolled out such that we have
 
 #### 11. Difference-in-Differences 2
 
-Continuing with difference-in-differences, in week 2 we broaden our focus to cases with more than 2 time periods. We will discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically staggered and non-saturating treatments, and heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
+We continue our exploration of DiD, broadening our focus to cases with more than 2 time periods. We discuss first the two-way fixed effects estimator that has been a dominant tool for estimating 'generalised difference-in-differences' and then explore the implied assumptions in this approach and its weaknesses, specifically for staggered and non-saturating treatments, and cases with heterogeneous treatment effects. We introduce alternative 'modern' estimators that are robust to these settings. 
 
 ##### Lecture
 
