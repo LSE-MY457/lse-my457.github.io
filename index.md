@@ -24,6 +24,8 @@ There is a reasonable amount of reading for this class, especially in the early 
 * **CIS**: Imbens and Rubin, _Causal Inference for Statistics, Social, and Biomedical Sciences_, 2015, Cambridge University Press. 
 * **TE** Huntington-Klein, _The Effect: An Introduction to Research Design and Causality_, 2022, CRC Press. 
 
+_Note_: The three textbooks have very different flavours, and are pitched at different technical levels. **MHE** is the classic graduate-level text for causal inference, and is challenging but very accessible, though now a little out of date as it was published in 2009. **CIS** is very dense and technical, and serves as a reference text for much of the foundational material in the class (weeks 1-5). **TE** is the most straightforward textbook and is very accessible and very applied, while being is lighter and less technical.
+
 If you are particularly interested in the course material, there will be additional readings set from the following textbooks (as well as a few articles): 
 
 * **CMRI**: Pearl, _Causality: Models Reasoning and Inference (2nd Ed)_, 2009, Cambridge University Press.
