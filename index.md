@@ -202,7 +202,7 @@ We consider what happens if we are willing to weaken the assumptions underpinnin
 We now move onto a new research design: instrumental variables (IV). We introduce the basic architecture of modern IV, learn about the various assumptions needed to admit a causal interpretation, and explore some of the weaknesses and fragilities of the approach.
 
 ##### Lecture
-- [Lecture Slides - Instrumental Variables 1](slides/L9_IV_part1.pdf)
+- [Lecture Slides - Instrumental Variables 1](slides/L7_IV_part1.pdf)
 
 ##### Readings
 * TE: Chapter 19
@@ -225,7 +225,7 @@ We now move onto a new research design: instrumental variables (IV). We introduc
 Extending our investigation of IV designs, we focus on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, examiner designs, and recentered IV.
 
 ##### Lecture
-- [Lecture Slides - Instrumental Variables 2](slides/L10_IV_part2.pdf)
+- [Lecture Slides - Instrumental Variables 2](slides/L8_IV_part2.pdf)
 
 ##### Readings
 * [Cunningham, S. (2021). Causal inference: The mixtape. Yale university press. Section 7.8.](https://mixtape.scunning.com/07-instrumental_variables)
@@ -244,7 +244,7 @@ Extending our investigation of IV designs, we focus on the interpertation and es
 We move to the next core research design, regression discontinuity (RD), considering modern approaches to both sharp and fuzzy RD settings.  We briefly consider the regression kink (RK) design.
 
 ##### Lecture
-- [Lecture Slides - Regression Discontinuity](slides/L11_RDD.pdf)
+- [Lecture Slides - Regression Discontinuity](slides/L9_RDD.pdf)
 
 ##### Readings
 * MHE: Chapter 6
@@ -276,7 +276,7 @@ We now introduce one of the most popular research designs for applied causal inf
 
 ##### Lecture
 
-- [Lecture Slides - Difference-in-Differences 1](slides/L7_DinD_part1.pdf)
+- [Lecture Slides - Difference-in-Differences 1](slides/L10_DinD_part1.pdf)
 
 ##### Seminar: Difference-in-Differences
 
@@ -300,7 +300,7 @@ We continue our exploration of DiD, broadening our focus to cases with more than
 
 ##### Lecture
 
-- [Lecture Slides - Difference-in-Differences 2](slides/L8_DinD_part2.pdf)
+- [Lecture Slides - Difference-in-Differences 2](slides/L11_DinD_part2.pdf)
 
 ##### Readings
 * [Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. Journal of Financial Economics, 144(2), 370-395.](https://www.sciencedirect.com/science/article/pii/S0304405X22000204) (has some quite accessible discussions)
