@@ -36,7 +36,7 @@ _Note_: if you are particularly interested in graphical models and their applica
 
 ### Formative problem sets
 
-Statistics is best learned by doing. There will be six problem sets, released at 5pm on Wednesdays. You must submit one weeks later at 11am, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+Statistics is best learned by doing. There will be six problem sets, released at 5pm on Wednesdays. You must submit one weeks later at 11am, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd), which produces a pdf that looks like [this](psets/template/pset_template.pdf). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
