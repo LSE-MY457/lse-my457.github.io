@@ -1,0 +1,197 @@
+---
+title: "MY457/MY557: Causal Inference for Experimental and Observational Studies"
+subtitle: "Seminar 1: Randomized Experiments"
+author: ""
+date: ''
+output:
+  
+  html_document: default
+  pdf_document: default
+---
+
+```{r initialize, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The coding exercise this week will walk through a few general principles of the potential outcomes framework and how assignment mechanisms shape our ability to learn from obsreved data. First, we will load in some required packages and set a seed for reproducibility. :
+
+```{r setup,message=FALSE,warning=FALSE}
+library(dplyr) # for data management
+library(ggplot2) # for graphing
+library(ggdag) # for drawing DAGs in Rmarkdown
+library(estimatr) # some nice functions for estimating treatment effects in experimental settings
+set.seed(02139)
+```
+
+## Introduction
+
+We are interested in studying the effect of some causal variable ($D$) on some outcome variable ($Y$). In the potential outcomes framework, we assume that each unit has two potential outcomes: $Y_{0}$ and $Y_{1}$. $Y_{0}$ is the outcome that would be observed if the unit did not receive the treatment, while $Y_{1}$ is the outcome that would be observed if the unit did receive the treatment. The individual treatment effect (ITE) for each unit is then defined as $Y_{1} - Y_{0}$. The average treatment effect (ATE) is defined as the average of the individual treatment effects across all units, or the difference between the two averages, $E[Y_{1}] - E[Y_{0}]$.
+
+## Simulating Potential Outcomes
+
+We will start by generating a dataset with 1000 units, and generating our two potential outcomes. We will assume that the potential outcomes are a product of three things: $D$, a pre-treatment covariate $X$, and some random noise $U$. Recall, while we are able to observe both potential outcomes for each unit in this simulation, in practice we can only observe one realized potential outcome, corresponding to the treatment that was actually received. For now, we won't simulate any treatment assignment vector ($D$).
+
+Now, let's simulate some data on the basis of the DAG above. We will generate 1000 units. We will also assume that the potential outcomes are a product of three things: $D$ (which we have not yet generated), a pre-treatment covariate $X$, and some random noise $U$. We will set the treatment effect (TE) to be 1. Note that this is a constant treatment effect -- it is 1 for all units. The ATE/ATT/ATU will also all be 1.
+
+```{r generate_data}
+N = 1000
+TE = 1
+  
+data = tibble(
+  X = rnorm(N),
+  U = rnorm(N),
+  Y0 = TE*0 + 1.5*X + 1*U, # multiply the treatment effect by 0 
+  Y1 = TE*1 + 1.5*X + 1*U  # multiply the treatment effect by 1
+)
+```
+
+Note that we set the treatment effect as 1. Let's check whether this is true in our simulated data (it had better be!): `r mean(data$Y1 - data$Y0)`. Let's make a density plot that shows both potential outcomes:
+
+```{r plot_potential_outcomes}
+data %>% 
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0"), alpha = 0.5) +
+  geom_density(aes(x = Y1, fill = "Y1"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y", y = "Density")
+```
+
+There is little surprising in this plot -- basically, the distribution for $Y1$ is just the same distribution as $Y0$ but shifted to the right by 1 unit. Again, the reason the distributions are otherwise **exactly** the same is that we are studying a case with a constant treatment effect.
+
+## Selection Bias
+
+As we saw in lecture, a central concern we face is selection bias. Selection bias occurs when the potential outcomes $(Y_{0},Y_{1})$ are systematically different between the treatment and control groups. Let's simulate a treatment vector that is not randomized, but instead based on the value of $X$. We will set $P(D=1) = 0.7$ if $X > 0$ and $P(D=1) = 0.3$ if $X \leq 0$.
+
+We can write down this data generating process as a DAG, if we want:
+
+```{r theoretical_dag_selection}
+theory = dagify(Y ~ D + X + U, 
+                D ~ X,
+                coords = list(
+                  x = c(Y = 4, D = 6, X = 5, U = 4), 
+                  y = c(Y = 2, D = 2, X = 3, U = 3)
+                ))
+
+ggdag(theory) + 
+  theme_void() +
+  remove_axes()
+```
+
+Now, let's simulate $D$ based on the above rule, and generate an observed $Y$ as a function of that vector:
+
+```{r generate_treatment}
+data_selection = data %>% 
+  mutate(D = ifelse(X > 0, rbinom(N, 1, 0.7), rbinom(N, 1, 0.3)), 
+         Y = Y1*D + Y0*(1-D))
+```
+
+Now that we have both our realized $D$ and our observed $Y$, let's estimate the ATE in two ways, difference-in-means and linear regression:
+
+```{r estimate_ate_selection}
+# Difference-in-means
+mean(data_selection$Y[data_selection$D==1]) - mean(data_selection$Y[data_selection$D==0])
+
+# Regression:
+lm(Y ~ D, data_selection)
+```
+
+Note two things. First, in terms of point estimation the two approaches are exactly equivalent (aside from rounding). Second, both estimates are quite far from the known ATE -- note that we haven't actually demonstrated any bias here because we haven't done this exercise over repeated samples, but with $N=1000$ the 'miss' is notable.
+
+Why is this happening? Well, we have **selection bias** -- potential outcomes are not balanced between treatment groups. We can actually see that, because we have simulated both potential outcomes:
+
+```{r po_imbalance}
+mean(data_selection$Y0[data_selection$D==1]) - mean(data_selection$Y0[data_selection$D==0])
+mean(data_selection$Y1[data_selection$D==1]) - mean(data_selection$Y1[data_selection$D==0])
+
+data_selection[data_selection$D==1, ] %>%
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0_treated"), alpha = 0.5) +
+  geom_density(data = data_selection[data_selection$D==0, ], aes(x = Y0, fill = "Y0_control"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y0", y = "Density")
+
+```
+
+## Randomization
+
+Let's now explore how randomization as an assignment mechanism might solve the selection bias problem. We will simulate two different randomization schemes: simple randomization (where each individual is subject to a bernoulli trial) and complete randomization (where we force our two groups to be of equal size.
+
+```{r randomization}
+# First, randomize via bernoulli trial (simple randomization):
+data_simple = data %>%
+  mutate(D = rbinom(N, 1, 0.5), 
+         Y = Y1*D + Y0*(1-D)) 
+
+mean(data_simple$D)
+
+# Second, complete randomization: 
+data_complete = slice(data, sample(1:n())) %>%
+  mutate(D = rep(c(0,1), each = N/2), 
+         Y = Y1*D + Y0*(1-D))
+
+mean(data_complete$D)
+```
+
+As before, we now have our treatment $D$ and our realized outcome $Y$. Let's estimate the ATE:
+
+```{r estimate_ate_randomization}
+# Difference-in-means
+mean(data_simple$Y[data_simple$D==1]) - mean(data_simple$Y[data_simple$D==0])
+mean(data_complete$Y[data_complete$D==1]) - mean(data_complete$Y[data_complete$D==0])
+
+# Regression:
+lm(Y ~ D, data_simple)
+lm(Y ~ D, data_complete)
+```
+
+Randomization of $D$ has "solved" the selection problem. Why? By randomizing $D$, we are no longer in our previous DAG, where $X$ simultaneously sets $Y$ and $D$, or, in potential outcomes terms, where our potential outcomes are not independent of treatment assignment. Let's see that in terms of potential outcomes (we will just look at the complete case, but the same will roughly hold for simple randomization):
+
+```{r po_balance}
+mean(data_complete$Y0[data_complete$D==1]) - mean(data_complete$Y0[data_complete$D==0])
+mean(data_complete$Y1[data_complete$D==1]) - mean(data_complete$Y1[data_complete$D==0])
+
+data_complete[data_complete$D==1, ] %>%
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0_treated"), alpha = 0.5) +
+  geom_density(data = data_complete[data_complete$D==0, ], aes(x = Y0, fill = "Y0_control"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y0", y = "Density")
+
+```
+
+Let's now learn some effective ways to visualize experimental results. We will start with a plot that shows both the estimated means and 95\% confidence intervals for each group (treated and control), and underlays the actual data from our experiment:
+
+```{r experiment_viz}
+data_complete %>%
+  ggplot(aes(x = D, y = Y)) +
+  # add the points, but jitter on the x-axis -- please be *VERY* careful using jitter.
+  geom_point(position = position_jitter(width = 0.05), alpha = 0.05) +
+  stat_summary(geom = "point", fun = mean, aes(group = D), size = 1) +
+  stat_summary(geom = "errorbar", fun.data = mean_cl_normal, width = 0) +
+  theme_minimal() +
+  scale_x_continuous(breaks = c(0,1), labels = c("Control", "Treated")) +
+  # add text for point estimates:
+  geom_text(aes(label = round(after_stat(y), 2)), stat = "summary", vjust = -1) +
+  labs(title = "Mean Values of Y and Treatment Condition", x = "Treatment Status", y = "Y")
+```
+
+## Covariates
+
+What role do covariates play in these two settings, selection and randomization? When we generated our selection bias setting, we made treatment an explicit function of $X$. We also made $Y$ a function of $X$. As such, we know that $X$ is a confounder in the relationship between $D$ and $Y$. In the experimental setting, $X$ should be, by the balancing property, independent of potential outcomes $Y0$ and $Y1$. Question: Would it be independent of $Y$?
+
+Let's control for $X$. We will use a new function, estimatr::lm_robust, as this is a convenient function for linear regression with robust standard errors.
+
+```{r controlling_for_x}
+# covariate adjustment in the selection case:
+summary(lm_robust(Y ~ D, data_selection))
+summary(lm_robust(Y ~ D + X, data_selection))
+
+# covariate adjustment in the randomization case:
+summary(lm_robust(Y ~ D, data_complete))
+summary(lm_robust(Y ~ D + X, data_complete))
+```
+
+Notice two things. First, in the selection case, controlling for $X$ is sufficient to identify the ATE. This is only true because of our very explicit data generating process: We know that $X$ is the only confounder in the relationship between $D$ and $Y$. Second, in the randomization case, controlling for $X$ is not necessary to identify the ATE, but we do make some efficiency gains (notice what happens to the standard error on the estimate of $D$.
+
+
+
