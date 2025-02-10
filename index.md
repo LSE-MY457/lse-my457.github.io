@@ -154,8 +154,8 @@ We consider the three most frequently seen estimation strategies for selection-o
 
 - [Seminar Code](seminars/seminar2/coding/XXX.Rmd)
 - [Seminar Paper 1](seminars/seminar2/paper/MY457_seminar2_paper1.pdf)
-- [Seminar Paper 2 (response to paper 1)](seminars/seminar2/paper/MY457_seminar2_paper2.pdf) 
-- [Seminar Questions](seminars/seminar2/paper/MY457_seminar2_questions.pdf)
+- [Seminar Paper 2 (response to paper 1)](seminars/seminar2/MY457_seminar2_paper2.pdf) 
+- [Seminar Questions](seminars/seminar2/MY457_seminar2_questions.pdf)
 
 ##### Readings
 * MHE: Sections 3.2 and 3.3
