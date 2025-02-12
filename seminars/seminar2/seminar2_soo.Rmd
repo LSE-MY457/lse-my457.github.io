@@ -1,0 +1,247 @@
+---
+title: "MY457/MY557: Causal Inference for Experimental and Observational Studies"
+subtitle: "Seminar 2: Selection on Observables"
+author: ""
+date: ''
+output:
+  
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The coding exercise this week will walk through some of the core ideas of selection on observables. First, we will load in some required packages and set a seed for reproducibility.
+
+```{r setup,message=FALSE,warning=FALSE}
+package_check <- function(need = c()){
+  have <- need %in% rownames(installed.packages()) # checks packages you have
+  if(any(!have)) install.packages(need[!have]) # install missing packages
+  invisible(lapply(need, library, character.only=T))
+}
+
+package_check(c("dplyr", "ggplot2", "ggdag", "estimatr", "MatchIt", "Matching", "cobalt", "ipw"))
+
+# dplyr for data management
+# ggplot2 for graphing
+# ggdag for drawing DAGs in Rmarkdown
+# estimatr some nice functions for estimating treatment effects in experimental settings
+# MatchIt for matching
+# Matching -- an alternative for matching
+# cobalt for love plots and balance tables
+# ipw for ipw estimation
+set.seed(02139)
+```
+
+## Introduction
+
+We are interested in studying the effect of some causal variable ($D$) on some outcome variable ($Y$). As before, we will assume that $D$ is binary and so each unit has two potential outcomes: $Y_{0}$ and $Y_{1}$.
+
+In a selection on observables case, we will have a set of covariates that are related to both the treatment assignment and the outcome.
+
+## Simulating Potential Outcomes
+
+We will start by generating a dataset with 1000 units, and generating our two potential outcomes. Let's assume that the potential outcomes are a product of five variables: our treatment $D$ (which will not simulate yet), pre-treatment covariates $X$, $Q$, and $P$, and some random noise $U$. We will also assume that the treatment effect is heterogeneous as a function of $X$. As before, while we are able to observe both potential outcomes for each unit in this simulation, in practice we can only observe one realized potential outcome, corresponding to the treatment that was actually received.
+
+```{r generate_data}
+N = 1000
+ATE = 2
+  
+data = tibble(
+  X = rbinom(N, 1, 0.5),
+  Q = rnorm(N),
+  P = rnorm(N),
+  U = rnorm(N), 
+  W = rnorm(N),
+) %>%
+  mutate(
+    Y0 = 1 + 0.5*X + 0.5*Q + 0.5*P + 0.5*U,
+    Y1 = Y0 + rnorm(N, mean = ATE*1.5, sd = 1)*X + rnorm(N, mean = ATE/2)*(1-X)
+  )
+
+#ATE:
+mean(data$Y1)  - mean(data$Y0)
+```
+
+## Assignment Mechanism
+
+Now let's define our assignment mechanism. Recall that so far we have only focused on the relationship between our covariates (and our treatment) and our two potential outcomes. We have not yet defined how the treatment is assigned, which will be key for understanding identification and estimation.
+
+Let's make treatment assignment a function of just two of our covariates, $X$, $Q$, $W$, plus some random noise from $U2$. To do this, we will use $X$, $Q$, $W$, and $U2$ to generate a propensity score, which is the probability of receiving treatment. We can then generate our realized outcomes $Y$.
+
+```{r theoretical_dag_assignment}
+theory = dagify(Y ~ D + X + Q + P + U, 
+                D ~ X + Q + W + U2,
+                coords = list(
+                  x = c(D = 4, Y = 6, X = 5, Q = 5, W = 4, P = 6, U = 6, U2 = 4), 
+                  y = c(D = 2, Y = 2, X = 3, Q = 1, W = 3, P = 3, U = 1, U2 = 1)
+                ))
+
+ggdag(theory) + 
+  theme_void() +
+  remove_axes()
+```
+
+```{r assignment_mechanism}
+data = data %>%
+  mutate(
+    U2 = rnorm(N),
+    pscore = 1/(1 + exp(-(-1 - 2*X - 1.5*Q + 1.5*W + 0.5*U2))),
+    D = rbinom(N, 1, pscore),
+    Y = Y1*D + Y0*(1-D)
+  )
+
+# check our assignment shares:
+mean(data$pscore)
+mean(data$D)
+
+# ATT:
+mean(data$Y1[data$D==1])  - mean(data$Y0[data$D==1])
+```
+
+## (Im)Balance in Potential Outcomes
+
+Now let's inspect the distributions of our potential outcomes, conditional on treatment assignment:
+
+```{r po_distributions}
+data[data$D==1,] %>%
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0_treated"), alpha = 0.5) +
+  geom_density(data = data[data$D==0, ], aes(x = Y0, fill = "Y0_control"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y0", y = "Density")
+```
+
+Unsurprisingly (hopefully!) we find that there is notable imbalance in our potential outcomes. That is, the distributions of $Y1$ and $Y0$ look quite different. If we estimate a naive difference in means (for example with a bivariate linear regression), we are likely to "miss" quite badly.
+
+```{r naive_estimation}
+summary(lm_robust(Y ~ D, data))
+```
+
+## Matching
+
+Thinking back to our DAG (and our assignment mechanism), it's quite clear that our identifying conditioning set is going to be {$X$,$Q$}. Let's do that in a few different ways. First, let's use matching:
+
+```{r matching}
+## using the MatchIt package:
+# conduct matching, mahalanobis distance, NN matching
+m.out.nn = MatchIt::matchit(D ~ X + Q, data = data, method = "nearest", distance = "mahalanobis")
+
+# inspecting the matched object:
+summary(m.out.nn)
+
+# now save the matched data
+m.data <- MatchIt::match.data(m.out.nn, weights = 'nn_weights')
+
+# let's see how well we did: 
+m.data[m.data$D==1,] %>%
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0_treated"), alpha = 0.5) +
+  geom_density(data = m.data[m.data$D==0, ], aes(x = Y0, fill = "Y0_control"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y0", y = "Density")
+
+# or, more realistically, make a balance table and love plot to test balance:
+cobalt::bal.tab(D ~ X + Q + W + P + U + U2, data = m.data, 
+                weights = "nn_weights", disp = c("means", "sds"))
+
+cobalt::love.plot(m.out.nn, data = data, addl = ~ + W + P + U + U2,
+                  stars = 'raw')
+
+# estimate the treatment effect
+summary(lm_robust(Y ~ D, m.data, weights = nn_weights))
+
+## using the Matching package:
+m.out = Matching::Match(Y = data$Y, Tr = data$D, X = data[,c("X","Q")], M=1, BiasAdjust = TRUE, Weight = 2)
+summary(m.out)
+```
+
+## Propensity Scores
+
+Let's try using propensity scores instead:
+
+```{r propensity_score}
+# estimate pscore:
+pscore_mod = glm(D ~ X + Q, data = data, family = "binomial")
+data$pscore_estimate = predict(pscore_mod, type = "response")
+
+# estimate the treatment effect using the propensity score as a right hand side variable:
+summary(lm_robust(Y ~ D + pscore_estimate, data))
+
+# or, match explicitly on the propensity score (we might gain a lot with , replace = TRUE)
+m.out.pscore = MatchIt::matchit(D ~ pscore_estimate, data = data, method = "nearest", distance = "Mahalanobis")
+m.data.pscore <- MatchIt::match.data(m.out.pscore, weights = 'pscore_weights')
+
+# let's see how well we did:
+m.data.pscore[m.data.pscore$D==1,] %>%
+  ggplot(aes(x = Y0)) +
+  geom_density(aes(fill = "Y0_treated"), alpha = 0.5) +
+  geom_density(data = m.data.pscore[m.data.pscore$D==0, ], aes(x = Y0, fill = "Y0_control"), alpha = 0.5) +
+  theme_minimal() +
+  labs(title = "Potential Outcomes", x = "Y0", y = "Density")
+
+# or, more realistically, make a love plot to test balance:
+cobalt::bal.tab(D ~ X + Q + W + P + U + U2, data = m.data.pscore, 
+                weights = "pscore_weights", disp = c("means", "sds"))
+
+cobalt::love.plot(m.out.pscore, data = data, addl = ~ X + Q + W + P + U + U2,
+                  stars = 'raw')
+
+# finally, let's estimate the treatment effect on the matched data:
+summary(lm_robust(Y ~ D, m.data.pscore, weights = pscore_weights))
+```
+
+Finally, given that we have estimated our propensity scores already, let's generate inverse probability weights (IPW) and use those to estimate our treatment effects:
+
+```{r ipw}
+# we can calculate our weights using the formula from class:
+data$ipweight = ifelse(data$D == 1, 1/data$pscore_estimate, 1/(1-data$pscore_estimate))
+
+# if you don't believe me, we can use a package:
+data$ipwpoint_ipweight <- ipw::ipwpoint(
+    exposure = D,
+    family = "binomial",  # The treatment is binary
+    link = "logit",
+    denominator = ~ X + Q,
+    data = as.data.frame(data)
+)$ipw.weights
+
+# now we can weight and use the plug-in estimator for the ATE:
+mean((data$D*data$Y)*data$ipweight - ((1-data$D)*data$Y)*data$ipweight)
+
+# or for the ATT:
+sum(data$D*data$Y - (1 - data$D)*data$Y*(data$pscore_estimate/(1-data$pscore_estimate)))/sum(data$D)
+
+# alternatively, can use the weights in a regression and get back something very similar for the ATE:
+summary(lm_robust(Y ~ D, data, weights = ipwweights))
+```
+
+## Regression
+
+Now, let's look at regression (but this time without using the propensity score or IPW):
+
+```{r regression}
+# estimate the treatment effect using regression:
+summary(lm_robust(Y ~ D + X + Q, data))
+
+# finally, let's use the fully interacted estimator (Lin, 2013):
+summary(lm_lin(Y ~ D, covariates = ~ X + Q, data))
+```
+
+## Good Control, Bad Control
+
+Finally, let's explore some of the other variables we included in the DAG:
+
+```{r good_control_bad_control}
+# let's start by adjusting for $P$, which only affects Y (neutral or good)
+summary(lm_lin(Y ~ D, covariates = ~ X + Q + P, data))
+
+# what about $W$, which affects only D (neutral or bad control):
+summary(lm_lin(Y ~ D, covariates = ~ X + Q + W, data))
+
+# More acutely, what happens if we just control for w? We find bias amplification:
+summary(lm_robust(Y ~ D, data))
+summary(lm_robust(Y ~ D + W, data))
+```
