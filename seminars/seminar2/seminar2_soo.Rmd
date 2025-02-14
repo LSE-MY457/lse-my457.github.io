@@ -215,7 +215,7 @@ mean((data$D*data$Y)*data$ipweight - ((1-data$D)*data$Y)*data$ipweight)
 sum(data$D*data$Y - (1 - data$D)*data$Y*(data$pscore_estimate/(1-data$pscore_estimate)))/sum(data$D)
 
 # alternatively, can use the weights in a regression and get back something very similar for the ATE:
-summary(lm_robust(Y ~ D, data, weights = ipwweights))
+summary(lm_robust(Y ~ D, data, weights = ipweight))
 ```
 
 ## Regression
