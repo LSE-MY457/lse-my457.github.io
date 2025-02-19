@@ -42,7 +42,7 @@ Statistics is best learned by doing. There will be six problem sets, released at
 |:--:|:-------:|:-----:|:-----|
 | 1 | [Formative problem set 1](#problem-set-1) | 29 January 2025 - 5pm | 5 February 2025 - 11am |
 | 2 | [Formative problem set 2](#problem-set-2) | 12 February 2025 - 5pm | 19 February 2025 - 11am  |
-| 3 | [Formative problem set 3](#problem-set-3) | 19 February 2025 - 5pm | 5 March 2025 - 11am  |
+| 3 | [Formative problem set 3](#problem-set-3) | 26 February 2025 - 5pm | 5 March 2025 - 11am  |
 | 4 | [Formative problem set 4](#problem-set-4) | 12 March 2025 - 5pm | 19 March 2025 - 11am  |
 | 5 | [Formative problem set 5](#problem-set-5) | 19 March 2025 - 5pm  | 26 March 2025 - 11am  |
 | 6 | [Formative problem set 6](#problem-set-6) | 2 April 2025 - 5pm | 9 April 2025 - 11am  |
