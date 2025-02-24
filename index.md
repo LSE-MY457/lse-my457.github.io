@@ -217,9 +217,9 @@ We now move onto a new research design: instrumental variables (IV). We introduc
 
 ##### Seminar: Instrumental Variables
 
-- [Seminar Paper](seminars/seminar4/paper/MY457_seminar4_paper.pdf) 
-- [Seminar Questions](seminars/seminar4/paper/MY457_seminar4_questions.pdf)
-- [Seminar Code](seminars/seminar4/coding/Class04-InstrumentalVariables.Rmd)
+- [Seminar Paper](seminars/seminar4/paper/seminar3_paper.pdf) 
+- [Seminar Questions](seminars/seminar4/paper/seminar3_questions.pdf)
+- [Seminar Code](seminars/seminar4/coding/seminar3_iv.Rmd)
 
 #### 8. Instrumental Variables 2
 
