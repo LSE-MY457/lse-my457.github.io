@@ -262,7 +262,7 @@ We move to the next core research design, regression discontinuity (RD), conside
 
 ##### Problem Set 4
 - [Problem Set](psets/pset4/pset4.pdf)
-- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
+- [Data](psets/pset4/pmgsy_working_aer_mainsample_reduced.dta)
 - [Solution Set](psets/pset4/pset4_solutions.pdf)
 
 #### 10. Difference-in-Differences 1
