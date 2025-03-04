@@ -217,7 +217,7 @@ We now move onto a new research design: instrumental variables (IV). We introduc
 
 ##### Problem Set 3
 - [Problem Set](psets/pset3/pset3.pdf)
-- [Data](psets/pset3/XXXXXX.dta)
+- [Data](psets/pset3/foreign_aid_human_rights_and_democracy_promotion.dta)
 - [Solution Set](psets/pset3/pset3_solutions.pdf)
 
 #### 8. Instrumental Variables 2
