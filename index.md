@@ -42,10 +42,9 @@ Statistics is best learned by doing. There will be six problem sets, released at
 |:--:|:-------:|:-----:|:-----|
 | 1 | [Formative problem set 1](#problem-set-1) | 29 January 2025 - 5pm | 5 February 2025 - 11am |
 | 2 | [Formative problem set 2](#problem-set-2) | 12 February 2025 - 5pm | 19 February 2025 - 11am  |
-| 3 | [Formative problem set 3](#problem-set-3) | 26 February 2025 - 5pm | 5 March 2025 - 11am  |
-| 4 | [Formative problem set 4](#problem-set-4) | 12 March 2025 - 5pm | 19 March 2025 - 11am  |
-| 5 | [Formative problem set 5](#problem-set-5) | 19 March 2025 - 5pm  | 26 March 2025 - 11am  |
-| 6 | [Formative problem set 6](#problem-set-6) | 2 April 2025 - 5pm | 9 April 2025 - 11am  |
+| 3 | [Formative problem set 3](#problem-set-3) | 5 March 2025 - 5pm | 12 March 2025 - 11am  |
+| 4 | [Formative problem set 4](#problem-set-4) | 19 March 2025 - 5pm | 26 March 2025 - 11am  |
+| 5 | [Formative problem set 5](#problem-set-5) | 2 April 2025 - 5pm  | 9 April 2025 - 11am  |
 
 ### Quick links to lectures
 
@@ -191,11 +190,6 @@ We consider what happens if we are willing to weaken the assumptions underpinnin
 * [Rosenbaum, P. R., & Rubin, D. B. (1983). Assessing sensitivity to an unobserved binary covariate in an observational study with binary outcome. Journal of the Royal Statistical Society: Series B (Methodological), 45(2), 212-218.](https://www.jstor.org/stable/2345524) (technical but foundational)
 * [Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An automated approach to causal inference in discrete settings. Journal of the American Statistical Association, (just-accepted), 1-25.](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2023.2216909) (very technical but very interesting)
 
-##### Problem Set 3
-- [Problem Set](psets/pset3/pset3.pdf)
-- [Data](psets/pset3/XXXXXX.dta)
-- [Solution Set](psets/pset3/pset3_solutions.pdf)
-
 #### 6. Reading Week
 
 #### 7. Instrumental Variables 1
@@ -221,6 +215,11 @@ We now move onto a new research design: instrumental variables (IV). We introduc
 - [Seminar Questions](seminars/seminar4/paper/seminar3_questions.pdf)
 - [Seminar Code](seminars/seminar4/coding/seminar3_iv.Rmd)
 
+##### Problem Set 3
+- [Problem Set](psets/pset3/pset3.pdf)
+- [Data](psets/pset3/XXXXXX.dta)
+- [Solution Set](psets/pset3/pset3_solutions.pdf)
+
 #### 8. Instrumental Variables 2
 
 Extending our investigation of IV designs, we focus on the interpertation and estimation of continuous IV settings, shift-share (Bartik) instruments, examiner designs, and recentered IV.
@@ -235,11 +234,6 @@ Extending our investigation of IV designs, we focus on the interpertation and es
 * [Goldsmith-Pinkham, P., Sorkin, I., & Swift, H. (2020). Bartik instruments: What, when, why, and how. American Economic Review, 110(8), 2586-2624.](https://www.aeaweb.org/articles?id=10.1257/aer.20181047)
 * [Borusyak, K., Hull, P., & Jaravel, X. (2022). Quasi-experimental shift-share research designs. The Review of Economic Studies, 89(1), 181-213.](https://academic.oup.com/restud/article-abstract/89/1/181/6294942)
 * [Frandsen, B., Lefgren, L., & Leslie, E. (2023). Judging judge fixed effects. American Economic Review, 113(1), 253-277.](https://www.aeaweb.org/articles?id=10.1257/aer.20201860)
-
-##### Problem Set 4
-- [Problem Set](psets/pset4/pset4.pdf)
-- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
-- [Solution Set](psets/pset4/pset4_solutions.pdf)
 
 #### 9. Regression Discontinuity
 We move to the next core research design, regression discontinuity (RD), considering modern approaches to both sharp and fuzzy RD settings.  We briefly consider the regression kink (RK) design.
@@ -266,10 +260,10 @@ We move to the next core research design, regression discontinuity (RD), conside
 - [Seminar Code](seminars/seminar5/coding/Class05-RegressionDiscontinuity.Rmd)
 - [Seminar Data](seminars/seminar5/coding/simdata.rds)
 
-##### Problem Set 5
-- [Problem Set](psets/pset5/pset5.pdf)
-- [Data](psets/pset5/pmgsy_working_aer_mainsample_reduced.dta)
-- [Solution Set](psets/pset5/pset5_solutions.pdf)
+##### Problem Set 4
+- [Problem Set](psets/pset4/pset4.pdf)
+- [Data](psets/pset4/foreign_aid_human_rights_and_democracy_promotion.dta)
+- [Solution Set](psets/pset4/pset4_solutions.pdf)
 
 #### 10. Difference-in-Differences 1
 
@@ -315,10 +309,10 @@ We continue our exploration of DiD, broadening our focus to cases with more than
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
 * [Abadie, A., (2021). Using synthetic controls: Feasibility, data requirements, and methodological aspects. Journal of economic literature, 59(2), pp.391-425.](https://www.aeaweb.org/articles?id=10.1257/jel.20191450)
 
-##### Problem Set 6
-- [Problem Set](psets/pset6/pset6.pdf)
-- [Data](psets/pset6/Norway-MSD.dta)
-- [Solution Set](psets/pset6/pset6_solutions.pdf)
+##### Problem Set 5
+- [Problem Set](psets/pset5/pset5.pdf)
+- [Data](psets/pset5/Norway-MSD.dta)
+- [Solution Set](psets/pset5/pset5_solutions.pdf)
 
 
 [COURSE ENDS]
