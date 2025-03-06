@@ -1,0 +1,275 @@
+---
+title: "MY457/MY557: Causal Inference for Experimental and Observational Studies"
+subtitle: "Seminar 3: Instrumental Variables"
+author: ""
+date: ''
+output:
+  
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The coding exercise this week will walk through some of the core ideas of instrumental variables. First, we will load in some required packages and set a seed for reproducibility.
+
+```{r setup,message=FALSE,warning=FALSE}
+package_check <- function(need = c()){
+  have <- need %in% rownames(installed.packages()) # checks packages you have
+  if(any(!have)) install.packages(need[!have]) # install missing packages
+  invisible(lapply(need, library, character.only=T))
+}
+
+package_check(c("dplyr", "ggplot2", "ggdag", "estimatr", "AER", "sandwich"))
+
+# dplyr for data management
+# ggplot2 for graphing
+# ggdag for drawing DAGs in Rmarkdown
+# estimatr some nice functions for estimating treatment effects in experimental settings
+# AER for 2sls support
+# sandwich for robust standard errors
+set.seed(02139)
+```
+
+## Introduction
+
+We are interested in studying the effect of some causal variable ($D$) on some outcome variable ($Y$). As before, we will assume that $D$ is binary and so each unit has two potential outcomes: $Y_{0}$ and $Y_{1}$.
+
+We will assume that an unobserved confounder $U$ affects both $D$ and $Y$, and that an observed confounder $X$ does the same. This means that the effect of $D$ on $Y$ is not identified. We will look for an instrument $Z$ that might be able to help us.
+
+## Theoretical Setup
+
+Let's first sketch the theoretical setup outlined above:
+
+```{r theoretical_dag}
+theory = dagify(Y ~ D + X + U, 
+                D ~ Z + X + U,
+                coords = list(
+                  x = c(D = 4, Y = 6, X = 5, U = 6, Z = 4), 
+                  y = c(D = 2, Y = 2, X = 3, U = 1, Z = 3)
+                ))
+
+ggdag(theory) + 
+  theme_void() +
+  remove_axes()
+```
+
+## Simulating Treatment Potential Outcomes
+
+Given this DAG, we can now simulate a dataset with 1000 observations.  We will first simulate the potential outcomes for the treatment variable $D$ as a function of $Z$.
+
+```{r generate_treatment_po}
+N = 1000
+
+data = tibble(
+  # First, assign X and U:
+  X = rnorm(N, 1, 0.5),
+  U = rnorm(N), 
+  # Next, assign a compliance score, which is the probability of being a complier (depending on X and U):
+  c_score = 1/(1 + exp(-(-1 + 1*X + 1*U))),
+  # Determine if a complier:
+  complier = rbinom(N, 1, c_score),
+  # Now assign D1 and D0 for compliers:
+  D0 = ifelse(complier == 1, 0, NA),
+  D1 = ifelse(complier == 1, 1, NA),
+  # Now generate a pscore for always- and never-takers:
+  p_score = 1/(1 + exp(-(-1 + .75*X + 2*U))),
+  always_taker = ifelse(complier == 0, rbinom(N, 1, p_score), 0),
+  never_taker = ifelse(complier == 0 & always_taker == 0, 1, 0),
+  compliance_type = ifelse(complier == 1, "complier", ifelse(always_taker == 1, "always_taker", "never_taker"))
+  ) %>%   # Now, finish assigning D0 and D1:
+  mutate(
+  D0 = ifelse(always_taker == 1, 1, D0),
+  D1 = ifelse(always_taker == 1, 1, D1),
+  D0 = ifelse(never_taker == 1, 0, D0),
+  D1 = ifelse(never_taker == 1, 0, D1)
+  )
+
+```
+
+Let's look at our compliance types: 
+
+```{r compliance_types}
+table(data$compliance_type)
+
+# And check against our D0 and D1 values:
+data %>%
+  group_by(D0, D1) %>%
+  summarise(n = n())
+
+```
+
+## Simulating Outcome Potential Outcomes
+
+Now that we have our treatment potential outcomes, we can simulate the potential outcomes for the outcome variable $Y$. We will assume an ATE of 2, but allow individual treatment effect heterogeneity.
+
+```{r generate_outcome_po}
+ATE = 2
+  
+data <- data %>%
+  mutate(
+    Y0 = 1 + 0.5*X + 0.5*U,
+    Y1 = Y0 + rnorm(N, mean = ATE, sd = 1)
+  )
+
+#ATE:
+mean(data$Y1)  - mean(data$Y0)
+```
+
+## Assigning Encouragement Randomly, and Realising Outcomes
+
+We have out potential outcomes for both treatment and the outcome variable, so we can now finally assign $Z$, and realize the outcomes for $D$ and $Y$. For now, our assignment mechanism will be straightforward randomization with a probability of 0.5.
+
+```{r assign_encouragement}
+data = data %>%
+  mutate(
+    Z = rbinom(N, 1, 0.5),
+    D = D0*(1-Z) + D1*Z,
+    Y = Y0*(1-D) + Y1*D
+  )
+```
+
+Let's look at our principle strata in the realised data, but recall that these are just a _mix_ of different compliance types.
+
+```{r principle_strata}
+table(data$D, data$Z)
+
+# Now let's see the mix of compliance types in each bin:
+table(data$compliance_type[data$D == 1 & data$Z == 1])
+table(data$compliance_type[data$D == 0 & data$Z == 0])
+table(data$compliance_type[data$D == 1 & data$Z == 0])
+table(data$compliance_type[data$D == 0 & data$Z == 1])
+```
+
+## Analysis
+
+Let's start by checking that the naive comparison does not work in the way we hope it would:
+
+```{r naive_analysis}
+summary(lm_robust(Y ~ D, data))
+
+```
+
+Now let's estimate the ITT:
+
+```{r itt_estimate}
+summary(lm_robust(Y ~ Z, data))
+
+```
+
+Let's try the Wald Estimator to get our LATE: 
+
+```{r wald_estimator}
+# Here's our Wald estimator as the ITT divided by the complier proportion
+late_wald <- (mean(data$Y[data$Z==1]) - mean(data$Y[data$Z==0]))/(mean(data$D[data$Z==1]) - mean(data$D[data$Z==0]))
+
+# Or, equivalently as covariances:
+cov(data$Y, data$Z)/cov(data$D, data$Z)
+
+# Let's quickly check our intuition about why we can estimate the proportion of compliers as the difference-in-means:
+mean(data$D[data$Z==1]) - mean(data$D[data$Z==0])
+table(data$complier)
+
+```
+
+And now let's estimate the LATE using 2SLS, which we will see mechanically gives us exactly the same point estimate (because we are just doing two bivariate regressions in this case):
+
+```{r 2sls_estimator}
+stage_1 <- lm_robust(D ~ Z, data)
+stage_2 <- lm_robust(Y ~ stage_1$fitted.values, data)
+summary(stage_2)
+
+# We can also do this with AER::ivreg
+ivreg_model <- ivreg(Y ~ D | Z, data = data)
+summary(ivreg_model, vcov = sandwich::sandwich, df = N-2)
+```
+
+## Violations of Identification Assumptions
+
+We will now re-assign $Z$ under two different worlds as $Z2$ and $Z3$. Each of these will encode violations of our two types of exogeneity assumptions. First, let's re-create our DAG with these two types of violations encoded: 
+
+```{r theoretical_dag}
+theory = dagify(Y ~ D + X + U3 +  U, 
+                D ~ Z + Z2 + Z3 + U2 + X + U,
+                Z2 ~ U2,
+                Z3 ~ U3,
+                coords = list(
+                  x = c(D = 4, Y = 6, X = 5, U = 6, Z = 4, Z2 = 3, Z3 = 3, U2 = 3, U3 = 4), 
+                  y = c(D = 2, Y = 2, X = 3, U = 1, Z = 3, Z2 = 3, Z3 = 1, U2 = 2, U3 = 1)
+                ))
+
+ggdag(theory) + 
+  theme_void() +
+  remove_axes()
+```
+
+Now, let's re-assign:
+
+```{r violations_exogeneity}
+data <- data %>%
+  mutate(
+    U2 = rnorm(N),
+    U3 = rnorm(N),
+    c_score = 1/(1 + exp(-(-1 + 1*X + 1*U + .75*U2))),
+    # Determine if a complier:
+    complier = rbinom(N, 1, c_score),
+    # Now assign D1 and D0 for compliers:
+    D0 = ifelse(complier == 1, 0, NA),
+    D1 = ifelse(complier == 1, 1, NA),
+    # Now generate a pscore for always- and never-takers:
+    p_score = 1/(1 + exp(-(-1 + .75*X + 2*U + 1*U2))),
+    always_taker = ifelse(complier == 0, rbinom(N, 1, p_score), 0),
+    never_taker = ifelse(complier == 0 & always_taker == 0, 1, 0),
+    compliance_type = ifelse(complier == 1, "complier", ifelse(always_taker == 1, "always_taker", "never_taker"))
+    ) %>%   # Now, finish assigning D0 and D1:
+    mutate(
+    D0 = ifelse(always_taker == 1, 1, D0),
+    D1 = ifelse(always_taker == 1, 1, D1),
+    D0 = ifelse(never_taker == 1, 0, D0),
+    D1 = ifelse(never_taker == 1, 0, D1),
+    # Now re-assign the treatment potential outcomes:
+    Y0 = 1 + 0.5*X + 0.5*U + 0.5*U3,
+    Y1 = Y0 + rnorm(N, mean = ATE, sd = 1),
+    # Probabilistically assign Z2 and Z3 based on U2 and U3:
+    Z2 = rbinom(N, 1, 1/(1 + exp(-(-1 + .75*U2)))),
+    Z3 = rbinom(N, 1, 1/(1 + exp(-(-1 + 0.5*U3)))),
+    D = D0*(1-Z) + D1*Z,
+    Y = Y0*(1-D) + Y1*D,
+    D2 = D0*(1-Z2) + D1*Z2,
+    Y2 = Y0*(1-D2) + Y1*D2,
+    D3 = D0*(1-Z3) + D1*Z3,
+    Y3 = Y0*(1-D3) + Y1*D3
+  )
+
+
+# Reminder, true parameters:
+# ATE:
+mean(data$Y1 - data$Y0)
+
+# LATE:
+mean(data$Y1[data$complier==1] - data$Y0[data$complier==1])
+
+# Pr(Complier)
+mean(data$complier)
+
+# ITT:
+mean(data$Y1[data$complier==1] - data$Y0[data$complier==1]) * mean(data$complier)
+
+# Let's estimate:
+late_wald <- (mean(data$Y[data$Z==1]) - mean(data$Y[data$Z==0]))/(mean(data$D[data$Z==1]) - mean(data$D[data$Z==0]))
+late_wald_2 <- (mean(data$Y2[data$Z2==1]) - mean(data$Y2[data$Z2==0]))/(mean(data$D2[data$Z2==1]) - mean(data$D2[data$Z2==0]))
+late_wald_3 <- (mean(data$Y3[data$Z3==1]) - mean(data$Y3[data$Z3==0]))/(mean(data$D3[data$Z3==1]) - mean(data$D3[data$Z3==0]))
+
+```
+
+
+
+
+
+
+
+
+
+
