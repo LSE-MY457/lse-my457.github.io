@@ -22,7 +22,7 @@ package_check <- function(need = c()){
   invisible(lapply(need, library, character.only=T))
 }
 
-package_check(c("dplyr", "ggplot2", "ggdag", "estimatr", "AER", "sandwich"))
+package_check(c("dplyr", "ggplot2", "ggdag", "estimatr", "AER", "sandwich", "lmtest"))
 
 # dplyr for data management
 # ggplot2 for graphing
@@ -106,16 +106,37 @@ data %>%
 Now that we have our treatment potential outcomes, we can simulate the potential outcomes for the outcome variable $Y$. We will assume an ATE of 2, but allow individual treatment effect heterogeneity.
 
 ```{r generate_outcome_po}
-ATE = 2
-  
+LATE = 2
+
 data <- data %>%
   mutate(
-    Y0 = 1 + 0.5*X + 0.5*U,
-    Y1 = Y0 + rnorm(N, mean = ATE, sd = 1)
+    Y0D0 = case_when(
+      complier == 1 ~ 1 + 0.5*X + 0.5*U,
+      always_taker == 1 ~ 1 + 0.5*X + 0.5*U + rnorm(N, mean = LATE, sd = 1),
+      never_taker == 1 ~ 1 + 0.5*X + 0.5*U,
+      TRUE ~ NA
+    ),
+    Y1D1 = case_when(
+      complier == 1 ~ Y0D0 + rnorm(N, mean = LATE, sd = 1),
+      always_taker == 1 ~ Y0D0, 
+      never_taker == 1 ~ Y0D0,
+      TRUE ~ NA
+    )
   )
 
-#ATE:
-mean(data$Y1)  - mean(data$Y0)
+#Pr(Compliers): 
+mean(data$complier)
+
+# ITT
+mean(data$Y1D1)  - mean(data$Y0D0)
+
+# LATE, two ways:
+mean(data$Y1D1[data$complier==1]) - mean(data$Y0D0[data$complier==1])
+(mean(data$Y1D1) - mean(data$Y0D0))/mean(data$complier)
+
+# CATEs for always-takers and never-takers:
+mean(data$Y1D1[data$always_taker==1]) - mean(data$Y0D0[data$always_taker==1])
+mean(data$Y1D1[data$never_taker==1]) - mean(data$Y0D0[data$never_taker==1])
 ```
 
 ## Assigning Encouragement Randomly, and Realising Outcomes
@@ -127,7 +148,7 @@ data = data %>%
   mutate(
     Z = rbinom(N, 1, 0.5),
     D = D0*(1-Z) + D1*Z,
-    Y = Y0*(1-D) + Y1*D
+    Y = Y0D0*(1-Z) + Y1D1*Z
   )
 ```
 
@@ -163,7 +184,7 @@ Let's try the Wald Estimator to get our LATE:
 
 ```{r wald_estimator}
 # Here's our Wald estimator as the ITT divided by the complier proportion
-late_wald <- (mean(data$Y[data$Z==1]) - mean(data$Y[data$Z==0]))/(mean(data$D[data$Z==1]) - mean(data$D[data$Z==0]))
+(mean(data$Y[data$Z==1]) - mean(data$Y[data$Z==0]))/(mean(data$D[data$Z==1]) - mean(data$D[data$Z==0]))
 
 # Or, equivalently as covariances:
 cov(data$Y, data$Z)/cov(data$D, data$Z)
@@ -183,93 +204,10 @@ summary(stage_2)
 
 # We can also do this with AER::ivreg
 ivreg_model <- ivreg(Y ~ D | Z, data = data)
-summary(ivreg_model, vcov = sandwich::sandwich, df = N-2)
-```
+coeftest(ivreg_model, vcov = sandwich::sandwich, df = N-2)
 
-## Violations of Identification Assumptions
-
-We will now re-assign $Z$ under two different worlds as $Z2$ and $Z3$. Each of these will encode violations of our two types of exogeneity assumptions. First, let's re-create our DAG with these two types of violations encoded: 
-
-```{r theoretical_dag}
-theory = dagify(Y ~ D + X + U3 +  U, 
-                D ~ Z + Z2 + Z3 + U2 + X + U,
-                Z2 ~ U2,
-                Z3 ~ U3,
-                coords = list(
-                  x = c(D = 4, Y = 6, X = 5, U = 6, Z = 4, Z2 = 3, Z3 = 3, U2 = 3, U3 = 4), 
-                  y = c(D = 2, Y = 2, X = 3, U = 1, Z = 3, Z2 = 3, Z3 = 1, U2 = 2, U3 = 1)
-                ))
-
-ggdag(theory) + 
-  theme_void() +
-  remove_axes()
-```
-
-Now, let's re-assign:
-
-```{r violations_exogeneity}
-data <- data %>%
-  mutate(
-    U2 = rnorm(N),
-    U3 = rnorm(N),
-    c_score = 1/(1 + exp(-(-1 + 1*X + 1*U + .75*U2))),
-    # Determine if a complier:
-    complier = rbinom(N, 1, c_score),
-    # Now assign D1 and D0 for compliers:
-    D0 = ifelse(complier == 1, 0, NA),
-    D1 = ifelse(complier == 1, 1, NA),
-    # Now generate a pscore for always- and never-takers:
-    p_score = 1/(1 + exp(-(-1 + .75*X + 2*U + 1*U2))),
-    always_taker = ifelse(complier == 0, rbinom(N, 1, p_score), 0),
-    never_taker = ifelse(complier == 0 & always_taker == 0, 1, 0),
-    compliance_type = ifelse(complier == 1, "complier", ifelse(always_taker == 1, "always_taker", "never_taker"))
-    ) %>%   # Now, finish assigning D0 and D1:
-    mutate(
-    D0 = ifelse(always_taker == 1, 1, D0),
-    D1 = ifelse(always_taker == 1, 1, D1),
-    D0 = ifelse(never_taker == 1, 0, D0),
-    D1 = ifelse(never_taker == 1, 0, D1),
-    # Now re-assign the treatment potential outcomes:
-    Y0 = 1 + 0.5*X + 0.5*U + 0.5*U3,
-    Y1 = Y0 + rnorm(N, mean = ATE, sd = 1),
-    # Probabilistically assign Z2 and Z3 based on U2 and U3:
-    Z2 = rbinom(N, 1, 1/(1 + exp(-(-1 + .75*U2)))),
-    Z3 = rbinom(N, 1, 1/(1 + exp(-(-1 + 0.5*U3)))),
-    D = D0*(1-Z) + D1*Z,
-    Y = Y0*(1-D) + Y1*D,
-    D2 = D0*(1-Z2) + D1*Z2,
-    Y2 = Y0*(1-D2) + Y1*D2,
-    D3 = D0*(1-Z3) + D1*Z3,
-    Y3 = Y0*(1-D3) + Y1*D3
-  )
-
-
-# Reminder, true parameters:
-# ATE:
-mean(data$Y1 - data$Y0)
-
-# LATE:
-mean(data$Y1[data$complier==1] - data$Y0[data$complier==1])
-
-# Pr(Complier)
-mean(data$complier)
-
-# ITT:
-mean(data$Y1[data$complier==1] - data$Y0[data$complier==1]) * mean(data$complier)
-
-# Let's estimate:
-late_wald <- (mean(data$Y[data$Z==1]) - mean(data$Y[data$Z==0]))/(mean(data$D[data$Z==1]) - mean(data$D[data$Z==0]))
-late_wald_2 <- (mean(data$Y2[data$Z2==1]) - mean(data$Y2[data$Z2==0]))/(mean(data$D2[data$Z2==1]) - mean(data$D2[data$Z2==0]))
-late_wald_3 <- (mean(data$Y3[data$Z3==1]) - mean(data$Y3[data$Z3==0]))/(mean(data$D3[data$Z3==1]) - mean(data$D3[data$Z3==0]))
+# Using regression we can also include covariates if we want, but in this case that might not be a good idea!
+ivreg_model_cov <- ivreg(Y ~ D + X, data = data, subset = Z == 1)
+coeftest(ivreg_model_cov, vcov = sandwich::sandwich, df = N-3)
 
 ```
-
-
-
-
-
-
-
-
-
-
