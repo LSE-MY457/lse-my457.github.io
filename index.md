@@ -273,13 +273,6 @@ We now introduce one of the most popular research designs for applied causal inf
 
 - [Lecture Slides - Difference-in-Differences 1](slides/L10_DinD_part1.pdf)
 
-##### Seminar: Difference-in-Differences
-
-- [Seminar Code](seminars/seminar3/coding/Class03-DifferenceInDifferences.Rmd)
-- [Seminar Data](seminars/seminar3/coding/simdata.rds)
-- [Seminar Paper](seminars/seminar3/paper/MY457_seminar3_paper.pdf) 
-- [Seminar Questions](seminars/seminar3/paper/MY457_seminar3_questions.pdf)
-
 ##### Readings
 * MHE: Section 5.2
 * TE: Chapter 18
@@ -308,6 +301,12 @@ We continue our exploration of DiD, broadening our focus to cases with more than
 * [Liu, L., Wang, Y., & Xu, Y. (2024). A practical guide to counterfactual estimators for causal inference with time‐series cross‐sectional data. American Journal of Political Science, 68(1), 160-176.](https://onlinelibrary.wiley.com/doi/full/10.1111/ajps.12723)
 * [Dube, A., Girardi, D., Jorda, O., & Taylor, A. M. (2023). A local projections approach to difference-in-differences event studies (No. w31184). National Bureau of Economic Research.](https://www.nber.org/papers/w31184)
 * [Abadie, A., (2021). Using synthetic controls: Feasibility, data requirements, and methodological aspects. Journal of economic literature, 59(2), pp.391-425.](https://www.aeaweb.org/articles?id=10.1257/jel.20191450)
+
+##### Seminar: Difference-in-Differences
+
+- [Seminar Code](seminars/seminar5/XXX.Rmd)
+- [Seminar Paper](seminars/seminar5/seminar5_paper.pdf) 
+- [Seminar Questions](seminars/seminar5/seminar5_paper.pdf)
 
 ##### Problem Set 5
 - [Problem Set](psets/pset5/pset5.pdf)
