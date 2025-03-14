@@ -255,10 +255,9 @@ We move to the next core research design, regression discontinuity (RD), conside
 
 ##### Seminar: Regression Discontinuity
 
-- [Seminar Paper](seminars/seminar5/paper/MY457_seminar5_paper.pdf) 
-- [Seminar Questions](seminars/seminar5/paper/MY457_seminar5_questions.pdf)
-- [Seminar Code](seminars/seminar5/coding/Class05-RegressionDiscontinuity.Rmd)
-- [Seminar Data](seminars/seminar5/coding/simdata.rds)
+- [Seminar Paper](seminars/seminar4/seminar4_paper.pdf) 
+- [Seminar Questions](seminars/seminar4/seminar4_questions.pdf)
+- [Seminar Code](seminars/seminar4/XXX.Rmd)
 
 ##### Problem Set 4
 - [Problem Set](psets/pset4/pset4.pdf)
