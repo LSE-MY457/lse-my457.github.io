@@ -1,0 +1,280 @@
+---
+title: "MY457/MY557: Causal Inference for Experimental and Observational Studies"
+subtitle: "Seminar 4: Regression Discontinuity"
+author: ""
+date: ''
+output:
+  
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The coding exercise this week will walk through some of the core ideas of regression discontinuity designs (RDD). First, we will load in some required packages and set a seed for reproducibility.
+
+```{r setup,message=FALSE,warning=FALSE}
+package_check <- function(need = c()){
+  have <- need %in% rownames(installed.packages()) # checks packages you have
+  if(any(!have)) install.packages(need[!have]) # install missing packages
+  invisible(lapply(need, library, character.only=T))
+}
+
+package_check(c("dplyr", "ggplot2", "ggdag", "estimatr", "rdrobust", "rddensity", "RDHonest"))
+
+# dplyr for data management
+# ggplot2 for graphing
+# ggdag for drawing DAGs in Rmarkdown
+# estimatr some nice functions for estimating treatment effects in experimental settings
+# rdrobust for core rdd implementations
+# rddensity for rdd density estimations
+# RDHonest for rdhonest CIs
+set.seed(02139)
+```
+
+## Introduction
+
+We are interested in studying the effect of some causal variable ($D$) on some outcome variable ($Y$). As before, we will assume that $D$ is binary and so each unit has two potential outcomes: $Y_{0}$ and $Y_{1}$.
+
+We will assume that an unobserved confounder $U$ affects both $D$ and $Y$. This means that the effect of $D$ on $Y$ is not identified. We will next assume that $D$ is assigned based on a forcing variable (running variable, score) $X$, such that $D$ is perfectly determined by $X$ relative to some threshold $c$. Critically, we will also allow $Y$ to be a function $X$.  
+
+## Theoretical Setup
+
+Let's first sketch the theoretical setup outlined above.
+
+```{r theoretical_dag}
+theory = dagify(Y ~ D + X + U + Q, 
+                D ~ X + U + X,
+                coords = list(
+                  x = c(D = 4, Y = 6, X = 4, U = 5, Q = 5), 
+                  y = c(D = 2, Y = 2, X = 3, U = 1, Q = 3)
+                ))
+
+ggdag(theory) + 
+  theme_void() +
+  remove_axes()
+
+```
+
+## Simulating X and Potential Outcomes
+
+Given this DAG, we can now simulate a dataset with 1000 observations.  We will first simulate the potential outcomes $Y$ as a function of $D$ and $X$.
+
+```{r generate_treatment_po}
+N = 1000
+LATE = 2
+c = 5 # we won't use this just yet
+
+data = tibble(
+  # First, assign X and U:
+  X = runif(N, 0, 10),
+  U = rnorm(N), 
+  Q = rnorm(N),
+  # Next, assign Y0:
+  Y0 = 1 + 0.5*X - 0.05*(X^2) + 0.025*(X^3) - 0.0025*(X^4) + 0.5*U,
+  Y1 = Y0 + rnorm(N, LATE, 0.25) - 0.5*X  + 0.1*(X^2)
+)
+
+```
+
+Let's analyze our two sets of potential outcomes
+
+```{r po_analyse}
+ggplot(data, aes(x = X, y = Y0)) + 
+  geom_point(color = "darkblue", alpha = 0.2) + 
+  geom_smooth(color = "darkblue", method = "loess", se = F) +
+  geom_point(aes(y = Y1), color = "darkred", alpha = 0.2) +
+  geom_smooth(aes(y = Y1), color = "darkred", method = "loess", se = F) +
+  geom_vline(xintercept = c) +
+  labs(title = "Potential Outcomes", x = "X", y = "Y0, Y1") +
+  theme_minimal()
+
+# ATE: Note, this is not going to be the same as the LATE we set. Why?
+mean(data$Y1) - mean (data$Y0)
+
+```
+
+
+## Assigning Treatment, and Realising Outcomes
+
+We have out potential outcomes for the outcome variable, so we can assign $D$, and realize $Y$. Recall, our cutpoint is $c = 5$.
+
+```{r assign_treatment}
+data = data %>% 
+  mutate(D = ifelse(X >= c, 1, 0),
+         Y = Y1*D + Y0*(1-D))
+
+```
+
+Let's look now at the realized treatment, and realized outcomes we observe:
+
+```{r realized_data}
+ggplot(data[data$X<c,], aes(x = X, y = D)) + 
+  geom_point(color = "darkblue", alpha = 0.5) + 
+  geom_point(data = data[data$X >= c,], aes(y = D), color = "darkred", alpha = 0.5) +
+  geom_vline(xintercept = c) + 
+  labs(title = "Realized Treatment Status", x = "X", y = "Treatment (D = 0,1)") +
+  theme_minimal()
+
+ggplot(data = data, aes(x = X, y = Y0)) + 
+  geom_smooth(color = "darkblue", method = "loess", alpha = 0.1, se = F) +
+  geom_smooth(aes(y = Y1), color = "darkred", method = "loess", alpha = 0.1, se = F) +
+  geom_point(data = data[data$X<c,], color = "darkblue", alpha = 0.5) + 
+  geom_point(data = data[data$X >= c,], aes(y = Y), color = "darkred", alpha = 0.5) +
+  geom_vline(xintercept = c) + 
+  labs(title = "Realized Treatment Status", x = "X", y = "Treatment (D = 0,1)") +
+  theme_minimal()
+
+```
+
+## Analysis
+
+Let's start by checking that the naive comparison does not work in the way we hope it would:
+
+```{r naive_analysis}
+summary(lm_robust(Y ~ D, data))
+
+```
+
+Now let's try a few flavours of a parametric estimator:
+
+```{r parametric_estimator}
+data <- data %>%
+  mutate(X_rec = X - c)
+
+# Common slopes:
+summary(lm_robust(Y ~ D + X_rec, data))
+
+# Variable slopes:
+summary(lm_robust(Y ~ D*X_rec, data))
+
+# Variable slopes and 2nd order polynomial
+summary(lm_robust(Y ~ D + D*X_rec + D*(I(X_rec^2)), data))
+
+# Variable slopes and 3rd order polynomial
+summary(lm_robust(Y ~ D + D*X_rec + D*(I(X_rec^2)) + D*(I(X_rec^3)), data))
+
+```
+
+Let's try the local approximation approach proposed by Cattaneo et al (2020):
+
+```{r rdrobust}
+# Note that the default rdrobust analysis gives us the conventional point estimates + SEs, and the robust bias-corrected SEs
+rd_est <- rdrobust(data$Y, data$X_rec, c = 0)
+summary(rd_est)
+
+# If we want to see all the estimates (conventional, bias-corrected, and robust bias-corrected, set all = TRUE)
+rd_est <- rdrobust(data$Y, data$X_rec, c = 0, all = TRUE)
+summary(rd_est)
+
+# Another option is that we can use the rdrobust function to get the bandwidths, and then use 
+# these to filter the data down to the window of interest. Note here for exposition we choose kernel = "uniform".
+# Ordinarily you should leave this as the default triangular kernel.
+mse <- rdbwselect(data$Y, data$X_rec, c = 0, kernel = "uniform")
+mse$bws
+
+data_bw <- data %>%
+  filter(X_rec >= 0 - mse$bws[1] & X_rec <= 0 + mse$bws[2])
+
+# We then fit our regression (but note, this will be assuming a uniform kernel as we aren't providing weights)
+summary(lm_robust(Y ~ D*X_rec, data_bw))
+
+# Now fit the same, using rdrobust, and we find the same point estimate! (But our SEs and CIs will be different).
+summary(rdrobust(data$Y, data$X_rec, c = 0, kernel = "uniform"))
+
+```
+
+And similar analyses using the bias-aware approach of Armstrong & Kolesar (2018, 2020) and Kolesar & Rothe (2018):
+
+```{r RDHonest}
+rdh_est <- RDHonest(Y ~ X_rec, cutoff = 0, data = data)
+rdh_est
+
+```
+
+The differences here are two-fold. First, RDHonest is using a different bandwidth selection method (though the default uses a similar principle to rdrobust), but this is not so important (we could e.g. feed RDHonest the bandwidths from rdrobust in the h argument). Second, and more important, RDHonest is explicitly "bias-aware" in the first instance. The researcher must specify a choice of M, a smoothness consant, which is basically an assumption about how smooth f(Y) is around the cutpoint. 
+
+## Visualisation
+
+Now let's visualize our RDD. Note, there are lots of ways to do this. You should consult Korting et al (2023) for more.
+
+```{r rdd_vis}
+# We can custom roll our own visualisation, if we want: 
+# (note, here we are just using loess to estimate the E[Y|X])
+ggplot(data = data[data$X<c,], aes(x = X, y = Y0)) + 
+  geom_smooth(color = "darkblue", method = "loess", alpha = 0.1, se = F) +
+  geom_point(color = "darkblue", alpha = 0.5) + 
+  geom_smooth(data = data[data$X >= c,], aes(y = Y1), color = "darkred", method = "loess", alpha = 0.1, se = F) +
+  geom_point(data = data[data$X >= c,], aes(y = Y), color = "darkred", alpha = 0.5) +
+  geom_vline(xintercept = c) + 
+  labs(title = "Realized Treatment Status", x = "X", y = "Treatment (D = 0,1)") +
+  theme_minimal()
+
+# Or we can use rdplot, which bins the data for us and fits a curve: 
+rdplot(data$Y, data$X_rec) 
+
+# Using the RDHonest package we don't get lines at all, just some (different) bins:
+RDScatter(Y ~ X_rec, data = data, cutoff = 0) + 
+  labs(title = "RDHonest Plot", x = "Forcing Variable (X)", y = "Outcome (Y)") + 
+  theme_minimal()
+```
+
+## Falsification
+
+Let's now be good scientists and conduct some falsification tests. Ideally we would do this before doing anything else!
+
+```{r falsification}
+# First, let's check for balance in a pre-treatment covariate, $Q$:
+bal_test <- rdrobust(data$Q, data$X_rec)
+summary(bal_test, all = TRUE)
+
+# Second, let's check for sorting with rddensity:
+density_test <- rddensity(data$X_rec, c = 0)
+summary(density_test)
+rdplotdensity(density_test, data$X_rec)
+
+# Third, let's check for jumpy data with placebo cutpoints: 
+plac_c <- c(seq(2,4.5, by = 0.1), seq(5.5,8, by = 0.1))
+plac_est <- c()
+plac_se <- c()
+
+for(i in 1:length(plac_c)){
+  data_plac <- data %>% 
+    mutate(X_rec_plac = X - plac_c[i])
+  plac_est[i] <- rdrobust(data_plac$U, data_plac$X_rec_plac, all = TRUE)$coef[1] # select conventional point estimate
+  plac_se[i] <- rdrobust(data_plac$U, data_plac$X_rec_plac, all = TRUE)$se[3] # select robust bias-corrected SE
+}
+
+plac_df <- tibble(c = plac_c, est = plac_est, se = plac_se, placebo = "Placebo") %>% # create a dataframe of our placebo estimates
+  rbind(tibble(c = c, est = rd_est$coef[1], se = rd_est$se[3], placebo = "Actual"))%>% # add in the "real" estimate
+  mutate(upper = est + 1.96*se,
+         lower = est - 1.96*se)
+
+ggplot(plac_df, aes(x = c, y = est, col = placebo)) +
+  geom_point() +
+  geom_errorbar(aes(ymin = lower, ymax = upper), alpha = 0.2) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  labs(title = "Placebo Cutpoint Analysis", x = "Placebo Cutpoint", y = "Estimated Effect (95% Robust CI)") +
+  # change the variable label for the legend to "Placebo?"
+  scale_color_manual(values = c("Actual" = "goldenrod", "Placebo" = "black"),name = "Placebo?") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
