@@ -257,7 +257,7 @@ We move to the next core research design, regression discontinuity (RD), conside
 
 - [Seminar Paper](seminars/seminar4/seminar4_paper.pdf) 
 - [Seminar Questions](seminars/seminar4/seminar4_questions.pdf)
-- [Seminar Code](seminars/seminar4/XXX.Rmd)
+- [Seminar Code](seminars/seminar4/seminar4_rdd.Rmd)
 
 ##### Problem Set 4
 - [Problem Set](psets/pset4/pset4.pdf)
