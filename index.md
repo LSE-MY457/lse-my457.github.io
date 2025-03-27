@@ -303,9 +303,9 @@ We continue our exploration of DiD, broadening our focus to cases with more than
 
 ##### Seminar: Difference-in-Differences
 
-- [Seminar Code](seminars/seminar5/XXX.Rmd)
+- [Seminar Code](seminars/seminar5/seminar5_did.Rmd)
 - [Seminar Paper](seminars/seminar5/seminar5_paper.pdf) 
-- [Seminar Questions](seminars/seminar5/seminar5_paper.pdf)
+- [Seminar Questions](seminars/seminar5/seminar5_questions.pdf)
 
 ##### Problem Set 5
 - [Problem Set](psets/pset5/pset5.pdf)
