@@ -30,7 +30,7 @@ package_check(c("dplyr", "ggplot2", "estimatr", "fixest", "plm", "panelView", "d
 # fixest for fast fixed effects
 # plm, an alternative to fixest
 # panelView for visualising panel data
-# did gives us callaway-sant'anna (we won't do this)
+# did gives us callaway-sant'anna estimator
 # fect for counterfactual estimators
 set.seed(02139)
 ```
@@ -43,7 +43,7 @@ Assume we have two time periods ($T = 0, 1$) and two groups ($G = 0, 1$). We are
 
 ## Simulating Data
 
-Given this setup, we can now simulate a dataset with 1000 observations.  We will first simulate the potential outcomes $Y$ as a function of $T$, $Z$, and an error term. 
+Given this setup, we can now simulate a dataset with 1000 observations. We will first simulate the potential outcomes $Y$ as a function of $T$, $Z$, and an error term.
 
 ```{r simulate_data_2x2}
 N = 1000
@@ -139,8 +139,8 @@ lm_robust(Y ~ G*t, data[data$t > -1,])
 data_fd <- data %>%
   filter(t > -1) %>%
   group_by(id) %>%
-  mutate(Y_change = Y - lag(Y)) %>%
-  ungroup()
+  # Note that lag() is masked, so must call specifically from dplyr:
+  mutate(Y_change = Y - dplyr::lag(Y))
 
 lm_robust(Y_change ~ Z, data_fd)
 
@@ -177,7 +177,7 @@ data_multi = tibble(
   t = rep(0:(periods-1), N),
   U = rnorm(N*periods), 
   # Assign a never-treated or pure control group:
-  C = c(replicate(N, rep(sample(c(0,1),1, prob = c(0.2,0.8)),periods))),
+  C = c(replicate(N, rep(sample(c(1,0),1, prob = c(0.2,0.8)),periods))),
   # Assign everyone a treatment group cohort (we will remove those who are never treated later):
   G = c(replicate(N, rep(sample(c(0:periods),1),periods))),
   # Assign treatment to those who are treated in their post-period:
@@ -192,11 +192,14 @@ data_multi = tibble(
   ),
   Y = Y1*Z + Y0*(1-Z)
   ) %>%
-  mutate(G = ifelse(C == 1, G, NA))
+  mutate(G = ifelse(C == 0, G, 0),
+         Z = ifelse(C == 0, Z, 0))
 
-# visualise the treatment regime (staggered and absorbing):
+# visualise the treatment regime (staggered and absorbing) and the outcomes:
 panelview(data_multi, index = c("id","t"), Y = "Y", D = "Z", main = "Panel View of Data", xlab = "Time", ylab = "Units", 
           display.all = TRUE)
+panelview(data_multi, index = c("id","t"), Y = "Y", D = "Z", main = "Panel View of Data", xlab = "Time", ylab = "Units", 
+          type = "outcome")
 
 # Check our estimand, the ATT in the post-period: 
 mean(data_multi$Y1[data_multi$Z==1]) - mean(data_multi$Y0[data_multi$Z==1])
@@ -222,7 +225,7 @@ lm_robust(Y ~ Z + factor(id), data_multi)$coef[1:10]
 # Let's try two-way fixed effects instead:
 # First, we can use the fixest package, which is much faster:
 twfe_feols <- fixest::feols(Y ~ Z | id + t, data_multi, cluster = "id")
-summary(twfe_lsdv)
+summary(twfe_feols)
 
 # Or we can use PLM (you would need to adjust the SEs for clustering)
 twfe_plm <- plm::plm(Y ~ Z, data = data_multi, index = c("id","t"), model = "within", effect = "twoways")
@@ -234,12 +237,37 @@ Finally, let's try a 'modern' estimator, from the fect package:
 
 ```{r fect}
 # Use fect package for fast estimation of fixed effects (you should increase the nboots)
-fect_out <- fect::fect(Y ~ Z, data = data_multi, index = c("id","t"), method = "ife", se = TRUE, nboots = 10)
+fect_out <- fect::fect(Y ~ Z, data = data_multi, index = c("id","t"), method = "ife", se = TRUE, nboots = 50)
 
 # Visualise the effect:
 plot(fect_out)
 
+# Test for pre-trends 1 -- joint F-test:
+plot(fect_out, type = "equiv")
+
+# Placebo period tests:
+fect_out_p <- fect::fect(Y ~ Z, data = data_multi, index = c("id","t"), method = "ife", se = TRUE, nboots = 50, placebo = TRUE, placebo.period = c(-2,0))
+
+plot(fect_out_p, stats = c("placebo.p","equiv.p"))
 
 ```
 
+Finally, let's try with Callaway & Sant'Anna's estimator, using the did package:
 
+```{r csdid}
+# Pre-process the data 
+did_proc_data <- data_multi %>%
+  did::pre_process_did(yname = "Y", tname = "t", idname = "id", gname = "G", allow_unbalanced_panel = T, data = .)
+
+# Estimation using pre-processed data:
+# Note, you should use base_period = 'universal' even though this is not the default. See Roth, 2024, "Interpreting Event-Studies from Recent Difference-in-Differences Methods"
+reg <- did_proc_data[['data']] %>%
+  did::att_gt(yname = "Y", tname = "t", idname = "id", gname = "G", 
+         control_group = c("nevertreated"), est_method = 'dr', base_period = 'universal',
+         allow_unbalanced_panel = T, data = .)
+
+reg
+
+ggdid(reg,ncol=3)
+
+```
