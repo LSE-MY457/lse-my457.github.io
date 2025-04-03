@@ -22,15 +22,16 @@ package_check <- function(need = c()){
   invisible(lapply(need, library, character.only=T))
 }
 
-package_check(c("dplyr", "ggplot2", "estimatr", "fixest", "panelView", "did", "fect"))
+package_check(c("dplyr", "ggplot2", "estimatr", "fixest", "plm", "panelView", "did", "fect"))
 
 # dplyr for data management
 # ggplot2 for graphing
-# ggdag for drawing DAGs in Rmarkdown
 # estimatr some nice functions for estimating treatment effects in experimental settings
-# rdrobust for rdrobust estimators
-# rddensity for rdd density estimation
-# RDHonest for rdhonest estimators
+# fixest for fast fixed effects
+# plm, an alternative to fixest
+# panelView for visualising panel data
+# did gives us callaway-sant'anna (we won't do this)
+# fect for counterfactual estimators
 set.seed(02139)
 ```
 
@@ -228,3 +229,17 @@ twfe_plm <- plm::plm(Y ~ Z, data = data_multi, index = c("id","t"), model = "wit
 summary(twfe_plm)
 
 ```
+
+Finally, let's try a 'modern' estimator, from the fect package:
+
+```{r fect}
+# Use fect package for fast estimation of fixed effects (you should increase the nboots)
+fect_out <- fect::fect(Y ~ Z, data = data_multi, index = c("id","t"), method = "ife", se = TRUE, nboots = 10)
+
+# Visualise the effect:
+plot(fect_out)
+
+
+```
+
+
