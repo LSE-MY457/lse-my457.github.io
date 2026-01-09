@@ -11,10 +11,10 @@ colorlinks: true
 ### Instructors
 
 * Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Methodology.
-* Seminar leaders: [Dr. Lanabi LaLova](mailto:XXX), Methodology, and [Dr. Zach Dickson](mailto:XXX), Methodology.
-* GTA (no office hours): [Anton Konneke](mailto:XXX), Government. 
+* Seminar leaders: [Dr. Lanabi LaLova](mailto:l.lalova@lse.ac.uk), Methodology, and [Dr. Zach Dickson](mailto:z.dickson@lse.ac.uk), Methodology.
+* GTA (no office hours): [Anton Könneke](mailto:a.konneke@lse.ac.uk), Government. 
 
-Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1463342). We will generally not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please email or attend office hours. 
+Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](X). We will generally not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please email or attend office hours. 
 
 ### Readings and textbooks
 
