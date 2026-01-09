@@ -11,8 +11,8 @@ colorlinks: true
 ### Instructors
 
 * Course convenor and lecturer: [Dr. Daniel de Kadt](mailto:d.n.de-kadt@lse.ac.uk), Methodology.
-* Seminar leader: [Dr. Michael Schultz](mailto:m.schultz2@lse.ac.uk), Methodology.
-* GTA (no office hours): [Pedro Torres-Lopez](mailto:p.torres-lopez@lse.ac.uk), Social Policy. 
+* Seminar leaders: [Dr. Lanabi LaLova](mailto:XXX), Methodology, and [Dr. Zach Dickson](mailto:XXX), Methodology.
+* GTA (no office hours): [Anton Konneke](mailto:XXX), Government. 
 
 Office hour may be booked via LSE's StudentHub. If you have questions or concerns about class material, problem sets, or the exam, please use the [class forum on Moodle](https://moodle.lse.ac.uk/mod/forum/view.php?id=1463342). We will generally not reply to emails about the course material, but we will reply promptly to questions posted on the forum. Of course, if you questions or concerns are of a private or personal nature, please email or attend office hours. 
 
@@ -36,7 +36,9 @@ _Note_: if you are particularly interested in graphical models and their applica
 
 ### Formative problem sets
 
-Statistics is best learned by doing. There will be six problem sets, released at 5pm on Wednesdays. You must submit one weeks later at 11am, on **Moodle**. Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd), which produces a pdf that looks like [this](psets/template/pset_template.pdf). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+Statistics is best learned by doing. There will be five problem sets, released at 5pm on Mondays using GitHub Classrooms. You must submit one week later at 11am, by pushing your repo to GitHub. 
+
+Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd), which produces a pdf that looks like [this](psets/template/pset_template.pdf). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
@@ -45,6 +47,14 @@ Statistics is best learned by doing. There will be six problem sets, released at
 | 3 | [Formative problem set 3](#problem-set-3) | 5 March 2025 - 5pm | 12 March 2025 - 11am  |
 | 4 | [Formative problem set 4](#problem-set-4) | 19 March 2025 - 5pm | 26 March 2025 - 11am  |
 | 5 | [Formative problem set 5](#problem-set-5) | 2 April 2025 - 5pm  | 9 April 2025 - 11am  |
+
+### Summative assessment
+
+The course will be assessed through two summative exercises. 
+
+Quiz (40%): 
+
+Replication (60%): 
 
 ### Quick links to lectures
 
