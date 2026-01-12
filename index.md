@@ -52,14 +52,16 @@ Your submission should be written in **RMarkdown**, and must be a **knitted .pdf
 
 The course will be assessed through two summative exercises:
 
-* MY457/557: **Quiz** (40%): Monday, 23rd of February, 13:15 - 14:15. Please consult timetables for venue. 
+* **Quiz** (40%, MY457/557): Monday, 23rd of February, 13:15 - 14:15. Please consult timetables for venue. 
 This one-hour pen-and-paper quiz will cover all content from weeks 1 through 5. Further details will be provided in class.
 
-* MY457: **Replication (60%)**: Due Friday, May 22nd 2026, 16:00. Please submit using GitHub Classroom.'
+**AND**
+
+* **Replication (60%, MY457)**: Due Friday, May 22nd 2026, 16:00. Please submit using GitHub Classroom. You will be provided 1 of 5 applied causal inference papers to critique, reappraise, and replicate. 
 
 **OR**
 
-* MY557: **Final Paper (60%)**: Due Friday, May 22nd 2026, 16:00. Please submit through Moodle. 
+* **Final Paper (60%, MY557)**: Due Friday, May 22nd 2026, 16:00. Please submit through Moodle. You will be expected to produce an original research paper, pre-analysis-plan, or independent replication and reappraisal, focused on causal inference.
 
 ### Quick links to lectures
 
