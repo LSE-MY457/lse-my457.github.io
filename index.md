@@ -55,8 +55,10 @@ The course will be assessed through two summative exercises:
 * MY457/557: **Quiz** (40%): Monday, 23rd of February, 13:15 - 14:15. Please consult timetables for venue. 
 This one-hour pen-and-paper quiz will cover all content from weeks 1 through 5. Further details will be provided in class.
 
-* MY457: **Replication (60%)**: Due Friday, May 22nd 2026, 16:00. Please submit using GitHub Classroom. 
-OR
+* MY457: **Replication (60%)**: Due Friday, May 22nd 2026, 16:00. Please submit using GitHub Classroom.'
+
+**OR**
+
 * MY557: **Final Paper (60%)**: Due Friday, May 22nd 2026, 16:00. Please submit through Moodle. 
 
 ### Quick links to lectures
