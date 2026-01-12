@@ -36,23 +36,23 @@ _Note_: if you are particularly interested in graphical models and their applica
 
 ### Formative problem sets
 
-Statistics is best learned by doing. There will be five problem sets, released at 5pm on Mondays using GitHub Classrooms. You must submit one week later at 11am, by pushing your repo to GitHub. 
+Statistics is best learned by doing. There will be five problem sets, released at 5pm on Mondays using GitHub Classrooms. You must submit one week later at 11am, by pushing your repo, including your completed work, to GitHub. 
 
-Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd), which produces a pdf that looks like [this](psets/template/pset_template.pdf). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned via Moodle within two weeks of submission. 
+Your submission should be written in **RMarkdown**, and must be a **knitted .pdf**, formatted as shown in this [problem set template](psets/template/pset_template.Rmd), which produces a pdf that looks like [this](psets/template/pset_template.pdf). If you do not follow the formatting requirements your problem set will not be marked. Comments will be returned within two weeks of submission. 
 
 |  |  Type | Release date | Due date  |
 |:--:|:-------:|:-----:|:-----|
-| 1 | [Formative problem set 1](#problem-set-1) | 29 January 2025 - 5pm | 5 February 2025 - 11am |
-| 2 | [Formative problem set 2](#problem-set-2) | 12 February 2025 - 5pm | 19 February 2025 - 11am  |
-| 3 | [Formative problem set 3](#problem-set-3) | 5 March 2025 - 5pm | 12 March 2025 - 11am  |
-| 4 | [Formative problem set 4](#problem-set-4) | 19 March 2025 - 5pm | 26 March 2025 - 11am  |
-| 5 | [Formative problem set 5](#problem-set-5) | 2 April 2025 - 5pm  | 9 April 2025 - 11am  |
+| 1 | [Formative problem set 1](#problem-set-1) | 26 January 2026 - 5pm | 02 February 2026 - 11am |
+| 2 | [Formative problem set 2](#problem-set-2) | 09 February 2026 - 5pm | 16 February 2026 - 11am  |
+| 3 | [Formative problem set 3](#problem-set-3) | 02 March 2026 - 5pm | 09 March 2026 - 11am  |
+| 4 | [Formative problem set 4](#problem-set-4) | 16 March 2026 - 5pm | 23 March 2026 - 11am  |
+| 5 | [Formative problem set 5](#problem-set-5) | 23 March 2026 - 5pm  | 01 April 2026 - 11am  |
 
 ### Summative assessment
 
 The course will be assessed through two summative exercises:
 
-* **Quiz** (40%, MY457/557): Monday, 23rd of February, 13:15 - 14:15. Please consult timetables for venue. 
+* **Quiz** (40%, MY457/557): Monday, February 23rd, 13:15 - 14:15. Please consult timetables for venue. 
 This one-hour pen-and-paper quiz will cover all content from weeks 1 through 5. Further details will be provided in class.
 
 **AND**
